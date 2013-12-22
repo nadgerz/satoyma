@@ -37,3 +37,9 @@ Steve and Tom's One Year Mapping Application
 	MongoDB
 	Postgres
 	Postgis
+
+We are looking at using Open Street Maps as our background data.
+
+[Importing OSM into MongoDB][impmongo]
+
+[impmongo]: http://derickrethans.nl/importing-osm-into-mongodb.html
