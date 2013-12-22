@@ -1,6 +1,6 @@
 # satoyma
 
-Steve and Tom's One Year Mapping Application
+__S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 
 	This is a long experiment.
 
@@ -52,6 +52,13 @@ We are looking at using Open Street Maps as our background data. [Importing OSM 
 Questions:
 
 1.  Should we go full javascript?  Use node as the back end or grails or vert.x?
+
+First steps:
+
+* setup vm using vagrant/puppet
+    * node
+    * mongodb
+
 
 
 [impmongo]: http://derickrethans.nl/importing-osm-into-mongodb.html
