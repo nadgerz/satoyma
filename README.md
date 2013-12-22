@@ -10,36 +10,36 @@ Steve and Tom's One Year Mapping Application
 
 	Along the way, we will use (probably):
 
-	Javascript
-	Angular.js
-	Karma
-	Jasmine
-	Vagrant
-	Node.js
-	Travis
-	HTML5
-	CSS3
-	Git
-	Groovy
-	Gradle
-	Java
-	Github
-	AWS
-	IntelliJ
-	Findbugs
-	PMD
-	Vert.x
-	Nodeunit
-	Markdown
-	jQuery
-	Responsive Web Design
-	Heroku
-	MongoDB
-	Postgres
-	Postgis
+	* Javascript
+	* Angular.js
+	* Karma
+	* Jasmine
+	* Vagrant
+	* Node.js
+	* Travis
+	* HTML5
+	* CSS3
+	* Git
+	* Groovy
+	* Gradle
+	* Java
+	* Github
+	* AWS
+	* IntelliJ
+	* Findbugs
+	* PMD
+	* Vert.x
+	* Nodeunit
+	* Markdown
+	* jQuery
+	* Responsive Web Design
+	* Heroku
+	* MongoDB
+	* Postgres
+	* Postgis
 
-We are looking at using Open Street Maps as our background data.
+We are looking at using Open Street Maps as our background data. [Importing OSM into MongoDB][impmongo]
 
-[Importing OSM into MongoDB][impmongo]
+
 
 [impmongo]: http://derickrethans.nl/importing-osm-into-mongodb.html
