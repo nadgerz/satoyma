@@ -145,14 +145,13 @@ module.exports = function ( grunt ) {
             }
         }
 
-        , targz: {
-            postgres: {
-                files: {
-                    "build":  "<%= curl.postgres.dest %>"
-                }
-            }
-        }
-
+//        , targz: {
+//            postgres: {
+//                files: {
+//                    "build":  "<%= curl.postgres.dest %>"
+//                }
+//            }
+//        }
 
         , watch:    {
             js:      {
@@ -160,11 +159,11 @@ module.exports = function ( grunt ) {
                 , tasks: ['jshint']
             }
             , html: {
-                files: ['<%= htmlhit.build.src %>']
+                files: ['<%= htmlhint.build.src %>']
                 , tasks: ['htmlhint']
             }
             , markdown: {
-                files: ['doc/**/*.md']
+                files: ['doc/**/*.md', 'doc/markdown.jst']
                 , tasks: ['markdown']
             }
         }

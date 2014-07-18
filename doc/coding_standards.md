@@ -4,7 +4,9 @@ This is a set of coding conventions and rules for use in JavaScript programming.
 It is inspired by the Sun document Code Conventions for the Java Programming Language.
 It is heavily modified of course because (JavaScript is not Java)[javascript not java].
 
-The long-term value of software to an organization is in direct proportion to the quality of the codebase. Over its lifetime, a program will be handled by many pairs of hands and eyes. If a program is able to clearly communicate its structure and characteristics, it is less likely that it will break when modified in the never-too-distant future.
+The long-term value of software to an organization is in direct proportion to the quality of the codebase.
+Over its lifetime, a program will be handled by many pairs of hands and eyes. If a program is able to clearly
+communicate its structure and characteristics, it is less likely that it will break when modified in the never-too-distant future.
 
 Code conventions can help in reducing the brittleness of programs.
 
@@ -60,4 +62,3 @@ Blank spaces should be used in the following circumstances:
 Use the === and !== operators. The == and != operators do type coercion and should not be used.
 
 [javascript not java]: http://javascript.crockford.com/javascript.html
-
