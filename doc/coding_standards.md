@@ -12,7 +12,7 @@ All of our JavaScript code is sent directly to the public. It should always be o
 
 Neatness counts.
 
-## JavaScript Files
+### JavaScript Files
 
 JavaScript programs should be stored in and delivered as .js files.
 
@@ -25,21 +25,21 @@ This reduces the effects of delays imposed by script loading on other page compo
 There is no need to use the language or type attributes. It is the server, not the
 script tag, that determines the MIME type.
 
-## Indentation
+### Indentation
 
 The unit of indentation is four spaces. Use of tabs should be avoided because
 (as of this writing in the 21st Century) there still is not a standard for the
 placement of tabstops. The use of spaces can produce a larger filesize, but the
 size is not significant over local networks, and the difference is eliminated by minification.
 
-## Line Length
+### Line Length
 
 Avoid lines longer than 80 characters. When a statement will not fit on a single line,
 it may be necessary to break it. Place the break after an operator, ideally after a comma.
 A break after an operator decreases the likelihood that a copy-paste error will be masked
 by semicolon insertion. The next line should be indented 8 spaces.
 
-##  Whitespace
+###  Whitespace
 
 Blank lines improve readability by setting off sections of code that are logically related.
 
@@ -55,7 +55,7 @@ Blank spaces should be used in the following circumstances:
 * Each __;__ (semicolon) in the control part of a for statement should be followed with a space.
 * Whitespace should follow every __,__ (comma).
 
-##  === and !== Operators.
+###  === and !== Operators.
 
 Use the === and !== operators. The == and != operators do type coercion and should not be used.
 
