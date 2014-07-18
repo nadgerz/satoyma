@@ -1,7 +1,5 @@
 
-BOOKLIST
-========
-
+# BOOKLIST
 
 Single Page Web Applications:
 
@@ -19,5 +17,3 @@ It is not an introductory book, so some knowledge of Javascript is useful.
 It really covers the nuts and bolts of doing an SPA from scratch.
 
 Highly recommended!
-
---------------------------------------------------
