@@ -2,7 +2,7 @@
 
 This is a set of coding conventions and rules for use in JavaScript programming.
 It is inspired by the Sun document Code Conventions for the Java Programming Language.
-It is heavily modified of course because (JavaScript is not Java)[javascript not java].
+It is heavily modified of course because [JavaScript is not Java][javascript not java].
 
 The long-term value of software to an organization is in direct proportion to the quality of the codebase.
 Over its lifetime, a program will be handled by many pairs of hands and eyes. If a program is able to clearly
@@ -60,5 +60,42 @@ Blank spaces should be used in the following circumstances:
 ###  === and !== Operators.
 
 Use the === and !== operators. The == and != operators do type coercion and should not be used.
+
+### var
+
+Always use __var__ to declare variables.
+
+When you fail to specify var, the variable gets placed in the global context,
+potentially clobbering existing values. Also, if there's no declaration, it's hard
+to tell in what scope a variable lives (e.g., it could be in the Document or Window
+just as easily as in the local scope). So always declare with var.
+
+
+### Constants
+
+* Use NAMES_LIKE_THIS for constant values.
+* Use @const to indicate a constant (non-overwritable) pointer (a variable or property).
+* Never use the const keyword as it's not supported in Internet Explorer.
+
+#### Constant values
+
+     If a value is intended to be constant and immutable, it should be given a name in CONSTANT_VALUE_CASE. ALL_CAPS additionally implies @const (that the value is not overwritable).
+
+     Primitive types (number, string, boolean) are constant values.
+
+     Objects' immutability is more subjective — objects should be considered immutable only if they do not demonstrate observable state change. This is not enforced by the compiler.
+
+#### Constant pointers (variables and properties)
+
+     The @const annotation on a variable or property implies that it is not overwritable. This is enforced by the compiler at build time. This behavior is consistent with the const keyword (which we do not use due to the lack of support in Internet Explorer).
+
+     A @const annotation on a method additionally implies that the method cannot not be overridden in subclasses.
+
+     A @const annotation on a constructor implies the class cannot be subclassed (akin to final in Java).
+
+
+
+
+
 
 [javascript not java]: http://javascript.crockford.com/javascript.html
