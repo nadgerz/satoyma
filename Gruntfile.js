@@ -93,14 +93,15 @@ module.exports = function ( grunt ) {
                 , "routes/**/*.js"
                 , "spec/**/*.js"
             ]
-                , options: {
-                    // http://www.jshint.com/docs/options/
-                    jshintrc: '.jshintrc',
-                    globals: {
-                        "console":      true,
-                        "require":      true,
-                        "module":       true
-                    }
+
+            , options: {
+                // http://www.jshint.com/docs/options/
+                jshintrc: '.jshintrc',
+                globals: {
+                    "console":      true,
+                    "require":      true,
+                    "module":       true
+                }
             }
         }
 
@@ -115,7 +116,7 @@ module.exports = function ( grunt ) {
                     }
                 ],
 
-                    options: {
+                options: {
                     template:        'doc/markdown.jst',
                         preCompile:      function ( src, context ) {
                     },

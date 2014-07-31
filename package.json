@@ -1,10 +1,13 @@
 {
   "name": "Satoyma",
+  "description": "Steve and Tom's One Year Mapping Application",
   "version": "0.0.1",
   "private": true,
+
   "scripts": {
     "start": "node ./app.js"
   },
+
   "dependencies": {
     "express":                  "~4.0.0",
     "static-favicon":           "~1.0.0",
@@ -13,8 +16,10 @@
     "body-parser":              "~1.0.0",
     "debug":                    "~0.7.4",
     "jade":                     "~1.3.0",
-    "requirejs":                "~2.1.14",
+    "requirejs":                "~2.1.14"
+  },
 
+  "dev-dependencies": {
     "grunt":                    "~0.4.5",
     "grunt-contrib-clean":      "~0.5.0",
     "grunt-contrib-compress":   "~0.9.1",
