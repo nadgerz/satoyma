@@ -205,6 +205,7 @@ module.exports = function ( grunt ) {
 
     grunt.registerTask( 'qa', ['htmlhint', 'jshint', 'jasmine' ] );
 
+    grunt.registerTask( 'lint', ['jshint', 'htmlhint'] );
     grunt.registerTask( 'test', ['jshint', 'htmlhint', 'jasmine'] );
     grunt.registerTask( 'default', ['jshint', 'htmlhint', 'concat', 'uglify'] )
 };

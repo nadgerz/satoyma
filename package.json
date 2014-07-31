@@ -1,8 +1,20 @@
 {
   "name": "Satoyma",
   "description": "Steve and Tom's One Year Mapping Application",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
+
+  "contributors": [
+    {
+      "name": "Tom Corbin",
+      "email": "thomas.corbin@gmail.com"
+    },
+    {
+      "name": "Steve Ingram",
+      "email": "stephen.a.ingram@gmail.com"
+    }
+  ],
+
 
   "scripts": {
     "start": "node ./app.js"
