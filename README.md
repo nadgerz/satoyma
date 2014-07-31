@@ -12,7 +12,7 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 
 	Along the way, we will use (probably):
 
-        **Front end**:
+        *Front end*:
 
 	* Javascript
 	* Angular.js
@@ -24,7 +24,7 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 	* jQuery
 	* Responsive Web Design
 
-        **Back end**:
+        *Back end*:
 
 	* Groovy
 	* Java
@@ -34,19 +34,16 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 	* Postgres
 	* Postgis
 
-        **Infrastructure** :
+        *Infrastructure* :
 
-	* IntelliJ
 	* Travis
 	* Github
 	* AWS
-	* Gradle
-	* Git
 	* Heroku
 
-	**Development tools**:
+	*Development tools*: TBD: How to put links in lists?
 
-	* .jshintrc [Starting from **JSHint Configuration, Strict Edition**][jshint_strict]
+	* .jshintrc [Starting from *JSHint Configuration, Strict Edition*][jshint_strict]
 	* WebStorm 8
 	* IntelliJ 13.x+
 	* Grunt
@@ -54,8 +51,10 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 	* gvm
 	* Findbugs
 	* PMD
+	* Gradle
+	* Git
 
-	**Testing tools**
+	*Testing tools*
 
 	* Jasmine
 	* Mocha
@@ -74,7 +73,6 @@ First steps:
 * setup vm using vagrant/puppet
     * node
     * mongodb
-
 
 
 [impmongo]: http://derickrethans.nl/importing-osm-into-mongodb.html
