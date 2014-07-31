@@ -7,13 +7,13 @@ module.exports = function ( grunt ) {
 
     grunt.initConfig( {
 
+        pkg:         grunt.file.readJSON( 'package.json' ),
+
         sourceJs:  ["public/javascripts/**/*.js", "routes/**/*.js"],
         clientJs:  ["public/**/*.js" ],
         serverJs:  ["public/lib/require.js", "app.js", "routes/*.js" ],
         jsFiles:   ["public/**/*.js", "routes/**/*.js"],
         pgVersion: "9.3.4",
-
-        pkg:         grunt.file.readJSON( 'package.json' ),
 
         // Zip everything up
         compress:  {
