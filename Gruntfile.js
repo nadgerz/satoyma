@@ -16,37 +16,40 @@ module.exports = function ( grunt ) {
         pgVersion: "9.3.4",
 
         // Zip everything up
-        compress:  {
+        compress: {
             target: {
                 files: {
                     'pack/<%= pkg.name %>.v<%= pkg.version %>.zip': ['prod/**']
                 }
             }
-        }
+        },
 
-        , concat:   {
+        concat: {
             options: {
                 // define a string to put between each file in the concatenated output
                 // separator: ';',
                 stripBanners: true
-            }
-            , client:   {
+            },
+    
+        client: {
                 // the files to concatenate
                 src:  "<%= clientJs %>",
 
                 // the location of the resulting JS file
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.client.concat.js'
-            }
-            , server:   {
+            },
+    
+        server: {
                 // the files to concatenate
                 src:  "<%= serverJs %>",
 
                 // the location of the resulting JS file
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.server.concat.js'
-            }
-            , css:  {
+            },
+    
+        css: {
                 // the files to concatenate
-                src:    ['public/**/*.css'],
+                src: ['public/**/*.css'],
 
                 // the location of the resulting JS file
                 dest:   'dist/<%= pkg.name %>.<%= pkg.version %>.concat.css',
@@ -54,9 +57,9 @@ module.exports = function ( grunt ) {
                 // 'dist/<%= pkg.name %>.<%= pkg.version %>.css' : ['public/**/*.css'],
                 nonull: true,
             }
-        }
-
-        , htmlhint: {
+        },
+    
+        htmlhint: {
             build: {
                 // https://github.com/yaniswang/HTMLHint/wiki/Rules
                 options: {
@@ -73,28 +76,30 @@ module.exports = function ( grunt ) {
                     'tag-pair':                 true,
                     'tag-self-close':           true,
                     'tagname-lowercase':        true
-                }
-                , src:  ['public/html/**/*.html']
+                },
+        
+        src: ['public/html/**/*.html']
             }
-        }
-
-        , jasmine:  {
-            files: ['<%= sourceJs %>']
-            , options: {
-                specs:      "spec/**/*.js"
-                , vendor:   "vendor/**/*.js"
+        },
+    
+        jasmine: {
+            files: ['<%= sourceJs %>'],
+    
+            options: {
+                specs:      "spec/**/*.js",
+                vendor:   "vendor/**/*.js"
             }
-        }
-
-        , jshint: {
-            all:        [
-                "Gruntfile.js"
-                , "public/javascripts/**/*.js"
-                , "routes/**/*.js"
-                , "spec/**/*.js"
-            ]
-
-            , options: {
+        },
+    
+        jshint: {
+            all: [
+                "Gruntfile.js",
+                 "public/javascripts/**/*.js",
+                 "routes/**/*.js",
+                 "spec/**/*.js"
+            ],
+    
+            options: {
                 // http://www.jshint.com/docs/options/
                 jshintrc: '.jshintrc',
                 globals: {
@@ -103,11 +108,11 @@ module.exports = function ( grunt ) {
                     "module":       true
                 }
             }
-        }
-
-        , markdown: {
+        },
+    
+        markdown: {
             all: {
-                files:      [
+                files: [
                     {
                         expand: true,
                         src:    'doc/**/*.md',
@@ -118,13 +123,16 @@ module.exports = function ( grunt ) {
 
                 options: {
                     template:        'doc/markdown.jst',
-                        preCompile:      function ( src, context ) {
+
+                    preCompile:      function ( src, context ) {
                     },
+
                     postCompile:     function ( src, context ) {
                     },
+
                     templateContext: {},
                     markdownOptions: {
-                        gfm: true,
+                    gfm: true,
     //                        highlight: 'manual',
     //                        codeLines: {
     //                            before: '<span>',
@@ -133,54 +141,58 @@ module.exports = function ( grunt ) {
                     }
                 }
             }
-        }
+        },
 
-        , requirejs: {
+        requirejs: {
             server: {
                 options: {
-                    mainConfigFile: "app.js",
-                    name: "app",
-                    out: "app.min.js",
-                    include: "node_modules"
+                    mainConfigFile:  "app.js",
+                    name:            "app",
+                    out:             "app.min.js",
+                    include:         "node_modules"
                 }
             }
-        }
+        },
 
-//        , targz: {
+//        targz: {
 //            postgres: {
 //                files: {
 //                    "build":  "<%= curl.postgres.dest %>"
 //                }
 //            }
-//        }
+//        },
 
-        , watch:    {
-            js:      {
-                files: ['<%= sourceJs %>']
-                , tasks: ['jshint']
-            }
-            , html: {
-                files: ['<%= htmlhint.build.src %>']
-                , tasks: ['htmlhint']
-            }
-            , markdown: {
-                files: ['doc/**/*.md', 'doc/markdown.jst']
-                , tasks: ['markdown']
-            }
-        }
+        watch: {
+            js: {
+                files: ['<%= sourceJs %>'],
+                tasks: ['jshint']
+            },
 
-        , uglify:   {
+            html: {
+                files: ['<%= htmlhint.build.src %>'],
+                tasks: ['htmlhint']
+            },
+
+            markdown: {
+                files: ['doc/**/*.md', 'doc/markdown.jst'],
+                tasks: ['markdown']
+            }
+        },
+
+        uglify: {
             options: {
                 // the banner is inserted at the top of the output
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
                 sourceMap: true
-            }
-            , client: {
+            },
+
+            client: {
                 files: {
                     '<%= pkg.name %>.<%= pkg.version %>.client.min.js': ['<%= clientJs %>']
                 }
-            }
-            , server: {
+            },
+
+            server: {
                 files: {
                     '<%= pkg.name %>.<%= pkg.version %>.server.min.js': ['<%= serverJs %>']
                 }
@@ -201,11 +213,11 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks( 'grunt-markdown' );
     grunt.loadNpmTasks( 'grunt-tar.gz' );
 
+    grunt.registerTask( 'lint', ['jshint', 'htmlhint'] );
+    grunt.registerTask( 'test', ['lint', 'jasmine'] );
+    grunt.registerTask( 'qa', ['lint', 'jasmine' ] );
+
     grunt.registerTask( 'dist', ['concat', 'uglify' ] );
 
-    grunt.registerTask( 'qa', ['htmlhint', 'jshint', 'jasmine' ] );
-
-    grunt.registerTask( 'lint', ['jshint', 'htmlhint'] );
-    grunt.registerTask( 'test', ['jshint', 'htmlhint', 'jasmine'] );
-    grunt.registerTask( 'default', ['jshint', 'htmlhint', 'concat', 'uglify'] )
+    grunt.registerTask( 'default', ['lint', 'concat', 'uglify'] ); // dist at end?
 };
