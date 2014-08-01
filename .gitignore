@@ -47,7 +47,9 @@ build/Release
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
-# https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
+#
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+# http://www.futurealoof.com/posts/nodemodules-in-git.html
 node_modules
 
 # Users Environment Variables
