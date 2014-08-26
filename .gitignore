@@ -74,10 +74,10 @@ node_modules/express
 #node_modules/grunt-htmlhint
 #node_modules/grunt-markdown
 #node_modules/grunt-tar.gz
-#node_modules/jade
+node_modules/jade
 node_modules/mocha
 #node_modules/mocha-mongo
-#node_modules/mongodb
+node_modules/mongodb
 #node_modules/morgan
 #node_modules/npm-check-updates
 node_modules/requirejs
