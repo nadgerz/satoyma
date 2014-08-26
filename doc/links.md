@@ -30,3 +30,5 @@ Learning about got workflows, with a view to moving to operating *feature branch
 
 [pojoviz](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#readme)
 
+[npmjs - package.json](https://www.npmjs.org/doc/files/package.json.html)
+
