@@ -37,3 +37,16 @@ SAI
 
 ---
 
+SAI
+===
+
+[Express.js 4, Node.js and MongoDB REST API Tutorial](http://webapplog.com/express-js-4-node-js-and-mongodb-rest-api-tutorial/)
+
+[I want part 6 that discusses Mocha](http://webapplog.com/express-js-4-node-js-and-mongodb-rest-api-tutorial/#run)
+
+[Test-Driven-Development with Express, MongoDB and Mongoose](http://devcenter.wercker.com/articles/languages/nodejs/tdd-with-mongoose.html)
+
+[Testing Your Model with Mocha, Mongo, and NodeJS](http://www.wekeroad.com/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/)
+
+---
+
