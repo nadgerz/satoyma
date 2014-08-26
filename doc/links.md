@@ -16,3 +16,22 @@ git config credential.helper 'cache --timeout=31536000'
 [stack-passwd]: http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-github
 [stack-gnome-git]: http://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration
 
+
+Learning about got workflows, with a view to moving to operating *feature branches*
+
+[https://www.atlassian.com/git/workflows]
+
+
+
+
+# Tools
+
+websync (rsync)
+
+[http://furier.github.io/websync/]
+
+
+pojoviz
+
+[http://maurizzzio.github.io/PojoViz/public/vulcanize.html#readme]
+
