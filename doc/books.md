@@ -22,3 +22,13 @@ Highly recommended!
 
 **Effective Javascript:**
 
+
+---
+
+**Human Javascript**
+
+[Online](http://read.humanjavascript.com/ch01-introduction.html)
+
+
+---
+
