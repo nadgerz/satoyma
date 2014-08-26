@@ -20,7 +20,12 @@ SAI
 [modern.IE - Main Site](https://modern.ie/en-us)
 
 
+SAI
+===
 
+[Find newer versions of dependencies than what your package.json allows](https://www.npmjs.org/package/npm-check-updates)
+
+**$ npm install npm-check-updates**
 
 
 
