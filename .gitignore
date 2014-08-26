@@ -50,7 +50,38 @@ build/Release
 #
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 # http://www.futurealoof.com/posts/nodemodules-in-git.html
-node_modules
+#
+# Comment out the ones we do not deploy
+#
+#node_modules/body-parser
+#node_modules/cookie-parser
+#node_modules/debug
+node_modules/express
+#node_modules/grunt
+#node_modules/grunt-check-modules
+#node_modules/grunt-contrib-clean
+#node_modules/grunt-contrib-compress
+#node_modules/grunt-contrib-concat
+#node_modules/grunt-contrib-copy
+#node_modules/grunt-contrib-jasmine
+#node_modules/grunt-contrib-jshint
+#node_modules/grunt-contrib-nodeunit
+#node_modules/grunt-contrib-requirejs
+#node_modules/grunt-contrib-uglify
+#node_modules/grunt-contrib-watch
+#node_modules/grunt-curl
+#node_modules/grunt-exec
+#node_modules/grunt-htmlhint
+#node_modules/grunt-markdown
+#node_modules/grunt-tar.gz
+#node_modules/jade
+node_modules/mocha
+#node_modules/mocha-mongo
+#node_modules/mongodb
+#node_modules/morgan
+#node_modules/npm-check-updates
+node_modules/requirejs
+#node_modules/static-favicon
 
 # Users Environment Variables
 .lock-wscript
