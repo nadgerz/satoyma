@@ -26,12 +26,7 @@ Learning about got workflows, with a view to moving to operating *feature branch
 
 # Tools
 
-websync (rsync)
+[websync (rsync)](http://furier.github.io/websync/)
 
-[http://furier.github.io/websync/]
-
-
-pojoviz
-
-[http://maurizzzio.github.io/PojoViz/public/vulcanize.html#readme]
+[pojoviz](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#readme)
 

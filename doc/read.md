@@ -10,9 +10,17 @@ was read and keeping it in one area?
 
 We'll see...
 
--------------------------------------------------------------------------
+---
 
-{SAI} Article about modern.IE [https://modern.ie/en-us]
+SAI
+===
 
-[http://www.sitepoint.com/test-site-locally-modern-ie/]
+[modern.IE article](http://www.sitepoint.com/test-site-locally-modern-ie/)
+
+[modern.IE - Main Site](https://modern.ie/en-us)
+
+
+
+
+
 
