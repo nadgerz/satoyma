@@ -12,8 +12,11 @@ We'll see...
 
 ---
 
+Tue 26th Aug 2014
+-----------------
+
 SAI
-===
+---
 
 [modern.IE article](http://www.sitepoint.com/test-site-locally-modern-ie/)
 
@@ -22,7 +25,7 @@ SAI
 ---
 
 SAI
-===
+---
 
 [Find newer versions of dependencies than what your package.json allows](https://www.npmjs.org/package/npm-check-updates)
 
@@ -31,14 +34,14 @@ SAI
 ---
 
 SAI
-===
+---
 
 [Change to tilde/caret default](http://fredkschott.com/post/2014/02/npm-no-longer-defaults-to-tildes/)
 
 ---
 
 SAI
-===
+---
 
 [Express.js 4, Node.js and MongoDB REST API Tutorial](http://webapplog.com/express-js-4-node-js-and-mongodb-rest-api-tutorial/)
 
