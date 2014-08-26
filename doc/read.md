@@ -19,6 +19,7 @@ SAI
 
 [modern.IE - Main Site](https://modern.ie/en-us)
 
+---
 
 SAI
 ===
@@ -27,5 +28,12 @@ SAI
 
 **$ npm install npm-check-updates**
 
+---
 
+SAI
+===
+
+[Change to tilde/caret default](http://fredkschott.com/post/2014/02/npm-no-longer-defaults-to-tildes/)
+
+---
 
