@@ -61,7 +61,6 @@
     "grunt-markdown": "^0.6.1",
     "grunt-tar.gz": "^0.0.3",
     "mocha": "^1.21.4",
-    "mocha-mongo": "^0.1.1",
-    "npm-check-updates": "^1.2.0"
+    "mocha-mongo": "^0.1.1"
   }
 }
