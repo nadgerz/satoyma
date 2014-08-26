@@ -28,7 +28,8 @@
   "keywords": [
     "maps",
     "mapping",
-    "satoyma"
+    "satoyma",
+    "mongodb"
   ],
   "dependencies": {
     "body-parser": "~1.0.0",
