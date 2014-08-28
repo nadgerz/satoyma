@@ -32,3 +32,10 @@ Highly recommended!
 
 ---
 
+**Practical Node.js**
+
+[Website](http://practicalnodebook.com)
+
+[Amazon](http://www.amazon.com/dp/1430265957)
+
+---

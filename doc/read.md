@@ -53,3 +53,20 @@ SAI
 
 ---
 
+Wed 27th Aug 2014
+-----------------
+
+SAI
+---
+
+Miscellaneous links...
+
+[Browserify and Gulp with React] (https://hacks.mozilla.org/2014/08/browserify-and-gulp-with-react)
+
+[Timesheet.js](http://semu.github.io/timesheet.js)
+
+[CSS Guidelines](http://cssguidelin.es)
+
+[An Introduction to PouchDb](https://blog.engineyard.com/2014/an-introduction-to-pouchdb)
+
+
