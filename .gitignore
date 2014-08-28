@@ -56,7 +56,7 @@ build/Release
 #node_modules/body-parser
 #node_modules/cookie-parser
 #node_modules/debug
-node_modules/express
+##node_modules/express
 #node_modules/grunt
 #node_modules/grunt-check-modules
 #node_modules/grunt-contrib-clean
@@ -74,13 +74,13 @@ node_modules/express
 #node_modules/grunt-htmlhint
 #node_modules/grunt-markdown
 #node_modules/grunt-tar.gz
-node_modules/jade
-node_modules/mocha
+##node_modules/jade
+##node_modules/mocha
 #node_modules/mocha-mongo
-node_modules/mongodb
+##node_modules/mongodb
 #node_modules/morgan
 #node_modules/npm-check-updates
-node_modules/requirejs
+##node_modules/requirejs
 #node_modules/static-favicon
 
 # Users Environment Variables
