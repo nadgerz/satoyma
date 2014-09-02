@@ -78,7 +78,7 @@ Large Scale JavaScript:
 
 Scalable JavaScript links...
 
-[Joseph Smarr's High Performance JavaScript slides.](http://)
+[Joseph Smarr's High Performance JavaScript slides.](http://www.slideshare.net/briandemant/smarr-oscon-2007)
 
 [LazyLoadJS](https://github.com/rgrove/lazyload)
 
