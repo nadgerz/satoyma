@@ -1,6 +1,10 @@
 #
 #    Some sections lifted from: from https://github.com/github/gitignore
+#    -------------------------------------------------------------------
 #
+#    SATOYMA
+tmp
+
 
 #
 #    IntelliJ
