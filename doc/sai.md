@@ -52,3 +52,17 @@ Er... :)
 
 ---
 
+[JSLint Error Explanations](http://jslinterrors.com)
+
+What's on the tin
+
+---
+
+[**5 Javascript libraries**](https://www.packtpub.com/books/content/top-5-newish-javascript-libraries-arent-angularjs)
+
+[Famo.us](http://famo.us)
+[Ractive](http://www.ractivejs.org)
+[dc.js - Dimensional Charting Javascript Library](http://dc-js.github.io/dc.js/)
+[Lo-Dash](lodash.com)
+[Polymer](http://www.polymer-project.org)
+
