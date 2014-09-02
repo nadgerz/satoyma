@@ -66,3 +66,21 @@ What's on the tin
 [Lo-Dash](lodash.com)
 [Polymer](http://www.polymer-project.org)
 
+---
+
+Git related
+
+[git hooks](http://githooks.com)
+
+---
+
+Large Scale JavaScript:
+
+Scalable JavaScript links...
+
+[Joseph Smarr's High Performance JavaScript slides.](http://)
+
+[LazyLoadJS](https://github.com/rgrove/lazyload)
+
+---
+
