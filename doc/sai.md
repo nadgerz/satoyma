@@ -76,11 +76,39 @@ Git related
 
 Large Scale JavaScript:
 
-Scalable JavaScript links...
+_Scalable JavaScript links..._
 
 [Joseph Smarr's High Performance JavaScript slides.](http://www.slideshare.net/briandemant/smarr-oscon-2007)
+
+Might be less relevant nowadays, but worth remembering...
+
+[Smarr's Yahoo talk for slides about High Performance JavaScript])https://www.youtube.com/watch?v=QszjZfvl9vw)
 
 [LazyLoadJS](https://github.com/rgrove/lazyload)
 
 ---
 
+Azat Mardan...
+
+[CoffeeScript: The Good Parts](https://www.youtube.com/watch?v=WX5Y6Dq1OHE)
+
+
+---
+
+Script Loaders...
+
+[Script Loaders - 1](http://www.creativebloq.com/javascript/essential-javascript-top-five-script-loaders-8122862)
+
+---
+
+iOS and Objective-C
+
+[Objective-C Tutorials](http://equallysimple.com/best-objective-c-ios-developer-video-tutorials-online/)
+
+---
+
+Android Tutorials
+
+[Android Tutorials](http://equallysimple.com/best-android-development-video-tutorials/)
+
+---
