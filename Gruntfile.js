@@ -84,7 +84,10 @@ module.exports = function ( grunt ) {
     
         jasmine: {
             files: ['<%= sourceJs %>'],
-    
+            src: ['public/js/home-index.js',
+                  'public/js/services/*.js',
+                  'public/js/validators/*.js' ],
+            
             options: {
                 specs:      "spec/**/*.js",
                 vendor:   "vendor/**/*.js"
