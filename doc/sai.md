@@ -112,3 +112,13 @@ Android Tutorials
 [Android Tutorials](http://equallysimple.com/best-android-development-video-tutorials/)
 
 ---
+
+CoffeeScript
+
+[Smooth CoffeeScript](http://autotelicum.github.io/Smooth-CoffeeScript/)
+
+[The Little Book on CoffeeScript](http://arcturo.github.io/library/coffeescript/)
+
+[CoffeeScript Cookbook](http://coffeescriptcookbook.com)
+
+[CoffeeScript Ristretto](https://leanpub.com/coffeescript-ristretto)
