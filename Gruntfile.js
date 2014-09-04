@@ -31,7 +31,7 @@ module.exports = function ( grunt ) {
                 stripBanners: true
             },
     
-        client: {
+            client: {
                 // the files to concatenate
                 src:  "<%= clientJs %>",
 
@@ -39,7 +39,7 @@ module.exports = function ( grunt ) {
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.client.concat.js'
             },
     
-        server: {
+            server: {
                 // the files to concatenate
                 src:  "<%= serverJs %>",
 
@@ -47,7 +47,7 @@ module.exports = function ( grunt ) {
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.server.concat.js'
             },
     
-        css: {
+            css: {
                 // the files to concatenate
                 src: ['public/**/*.css'],
 
@@ -55,7 +55,7 @@ module.exports = function ( grunt ) {
                 dest:   'dist/<%= pkg.name %>.<%= pkg.version %>.concat.css',
 
                 // 'dist/<%= pkg.name %>.<%= pkg.version %>.css' : ['public/**/*.css'],
-                nonull: true,
+                nonull: true
             }
         },
     
@@ -78,19 +78,28 @@ module.exports = function ( grunt ) {
                     'tagname-lowercase':        true
                 },
         
-        src: ['public/html/**/*.html']
+            src: ['public/html/**/*.html']
             }
         },
     
         jasmine: {
-            files: ['<%= sourceJs %>'],
+//            files: ['<%= sourceJs %>'],
+
             src: ['public/js/home-index.js',
                   'public/js/services/*.js',
-                  'public/js/validators/*.js' ],
-            
+                  'public/js/validators/*.js'
+            ],
+
             options: {
-                specs:      "spec/**/*.js",
-                vendor:   "vendor/**/*.js"
+                specs: [
+                    'public/js/specs/*.js'
+                ],
+                vendor: [
+                    'public/js/vendor/underscore.js',
+                    'public/js/vendor/lodash.js',
+                    'public/js/vendor/jquery.min.js',
+                    'public/js/vendor/bippy.js'
+                ]
             }
         },
     
@@ -135,7 +144,7 @@ module.exports = function ( grunt ) {
 
                     templateContext: {},
                     markdownOptions: {
-                    gfm: true,
+//                    gfm: true,
     //                        highlight: 'manual',
     //                        codeLines: {
     //                            before: '<span>',
