@@ -175,9 +175,15 @@ module.exports = function ( grunt ) {
 //        },
 
         watch: {
+//            scripts: {
+//                files: ['public/js/**/*.js'],
+//                tasks: ['jshint', 'test']
+//            },
+
             js: {
                 files: ['<%= sourceJs %>'],
-                tasks: ['jshint', 'test']
+//                tasks: ['jshint', 'test']
+                tasks: ['default']
             },
 
             html: {
@@ -212,6 +218,7 @@ module.exports = function ( grunt ) {
         }
     } );
 
+    // Load the plugins
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
     grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-contrib-concat' );
@@ -226,11 +233,16 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks( 'grunt-markdown' );
     grunt.loadNpmTasks( 'grunt-tar.gz' );
 
+    // My tasks
+    grunt.registerTask( 'watch-js', ['lint', 'dist', 'test'] );
+    grunt.registerTask( 'watch-html', ['lint', 'dist', 'test'] );
+    grunt.registerTask( 'watch-css', ['lint', 'dist', 'test'] );
+
     grunt.registerTask( 'lint', ['jshint', 'htmlhint'] );
     grunt.registerTask( 'test', ['lint', 'jasmine'] );
     grunt.registerTask( 'qa', ['lint', 'jasmine' ] );
 
     grunt.registerTask( 'dist', ['concat', 'uglify' ] );
 
-    grunt.registerTask( 'default', ['lint', 'concat', 'uglify'] ); // dist at end?
+    grunt.registerTask( 'default', ['lint', 'concat', 'uglify', 'mocha' ] ); // dist at end?
 };
