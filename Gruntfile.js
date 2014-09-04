@@ -177,17 +177,17 @@ module.exports = function ( grunt ) {
         watch: {
             js: {
                 files: ['<%= sourceJs %>'],
-                tasks: ['jshint']
+                tasks: ['jshint', 'test']
             },
 
             html: {
                 files: ['<%= htmlhint.build.src %>'],
-                tasks: ['htmlhint']
+                tasks: ['htmlhint', 'test']
             },
 
             markdown: {
                 files: ['doc/**/*.md', 'doc/markdown.jst'],
-                tasks: ['markdown']
+                tasks: ['markdown', 'test']
             }
         },
 
