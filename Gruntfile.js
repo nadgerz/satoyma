@@ -262,5 +262,8 @@ module.exports = function ( grunt ) {
 
     grunt.registerTask( 'dist', ['concat', 'uglify' ] );
 
+    // Create a task that runs all unit tests
+    grunt.registerTask( 'runtests', ['jasmine', 'jasmine_node' ] );
+
     grunt.registerTask( 'default', ['lint', 'concat', 'uglify', 'mocha' ] ); // dist at end?
 };
