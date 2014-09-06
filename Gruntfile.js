@@ -31,7 +31,7 @@ module.exports = function ( grunt ) {
                 stripBanners: true
             },
     
-        client: {
+            client: {
                 // the files to concatenate
                 src:  "<%= clientJs %>",
 
@@ -39,7 +39,7 @@ module.exports = function ( grunt ) {
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.client.concat.js'
             },
     
-        server: {
+            server: {
                 // the files to concatenate
                 src:  "<%= serverJs %>",
 
@@ -47,7 +47,7 @@ module.exports = function ( grunt ) {
                 dest: 'dist/<%= pkg.name %>.<%= pkg.version %>.server.concat.js'
             },
     
-        css: {
+            css: {
                 // the files to concatenate
                 src: ['public/**/*.css'],
 
@@ -55,7 +55,7 @@ module.exports = function ( grunt ) {
                 dest:   'dist/<%= pkg.name %>.<%= pkg.version %>.concat.css',
 
                 // 'dist/<%= pkg.name %>.<%= pkg.version %>.css' : ['public/**/*.css'],
-                nonull: true,
+                nonull: true
             }
         },
     
@@ -78,16 +78,28 @@ module.exports = function ( grunt ) {
                     'tagname-lowercase':        true
                 },
         
-        src: ['public/html/**/*.html']
+            src: ['public/html/**/*.html']
             }
         },
     
         jasmine: {
-            files: ['<%= sourceJs %>'],
-    
+//            files: ['<%= sourceJs %>'],
+
+            src: ['public/js/home-index.js',
+                  'public/js/services/*.js',
+                  'public/js/validators/*.js'
+            ],
+
             options: {
-                specs:      "spec/**/*.js",
-                vendor:   "vendor/**/*.js"
+                specs: [
+                    'public/js/specs/*.js'
+                ],
+                vendor: [
+                    'public/js/vendor/underscore.js',
+                    'public/js/vendor/lodash.js',
+                    'public/js/vendor/jquery.min.js',
+                    'public/js/vendor/bippy.js'
+                ]
             }
         },
     
@@ -132,7 +144,7 @@ module.exports = function ( grunt ) {
 
                     templateContext: {},
                     markdownOptions: {
-                    gfm: true,
+//                    gfm: true,
     //                        highlight: 'manual',
     //                        codeLines: {
     //                            before: '<span>',
@@ -163,19 +175,25 @@ module.exports = function ( grunt ) {
 //        },
 
         watch: {
+//            scripts: {
+//                files: ['public/js/**/*.js'],
+//                tasks: ['jshint', 'test']
+//            },
+
             js: {
                 files: ['<%= sourceJs %>'],
-                tasks: ['jshint']
+//                tasks: ['jshint', 'test']
+                tasks: ['default']
             },
 
             html: {
                 files: ['<%= htmlhint.build.src %>'],
-                tasks: ['htmlhint']
+                tasks: ['htmlhint', 'test']
             },
 
             markdown: {
                 files: ['doc/**/*.md', 'doc/markdown.jst'],
-                tasks: ['markdown']
+                tasks: ['markdown', 'test']
             }
         },
 
@@ -200,6 +218,7 @@ module.exports = function ( grunt ) {
         }
     } );
 
+    // Load the plugins
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
     grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-contrib-concat' );
@@ -214,11 +233,16 @@ module.exports = function ( grunt ) {
     grunt.loadNpmTasks( 'grunt-markdown' );
     grunt.loadNpmTasks( 'grunt-tar.gz' );
 
+    // My tasks
+    grunt.registerTask( 'watch-js', ['lint', 'dist', 'test'] );
+    grunt.registerTask( 'watch-html', ['lint', 'dist', 'test'] );
+    grunt.registerTask( 'watch-css', ['lint', 'dist', 'test'] );
+
     grunt.registerTask( 'lint', ['jshint', 'htmlhint'] );
     grunt.registerTask( 'test', ['lint', 'jasmine'] );
     grunt.registerTask( 'qa', ['lint', 'jasmine' ] );
 
     grunt.registerTask( 'dist', ['concat', 'uglify' ] );
 
-    grunt.registerTask( 'default', ['lint', 'concat', 'uglify'] ); // dist at end?
+    grunt.registerTask( 'default', ['lint', 'concat', 'uglify', 'mocha' ] ); // dist at end?
 };
