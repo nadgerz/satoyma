@@ -103,6 +103,23 @@ module.exports = function ( grunt ) {
             }
         },
     
+        jasmine_node: {
+            matchall: true,
+
+            projectRoot: "./src",
+
+            requirejs: false,
+
+            forceExist: true,
+
+            jUnit: {
+                report: false,
+                savePath: "./build/reports/jasmine/",
+                useDotNotation: true,
+                consolodate: true
+           }
+        },
+
         jshint: {
             all: [
                 "Gruntfile.js",
@@ -229,6 +246,7 @@ module.exports = function ( grunt ) {
 //    grunt.loadNpmTasks( 'grunt-contrib-typescript' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
+    grunt.loadNpmTasks( 'grunt-jasmine-node' );
     grunt.loadNpmTasks( 'grunt-htmlhint' );
     grunt.loadNpmTasks( 'grunt-markdown' );
     grunt.loadNpmTasks( 'grunt-tar.gz' );
