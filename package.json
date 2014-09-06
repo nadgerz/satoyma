@@ -58,6 +58,7 @@
     "grunt-curl": "^2.0.2",
     "grunt-exec": "^0.4.6",
     "grunt-htmlhint": "^0.4.1",
+    "grunt-jasmine-node": "^0.2.1",
     "grunt-markdown": "^0.6.1",
     "grunt-tar.gz": "^0.0.3",
     "mocha": "^1.21.4",
