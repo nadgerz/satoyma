@@ -103,6 +103,7 @@ module.exports = function(grunt) {
     // loading external tasks (aka: plugins)
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-contrib-less");
 
     // creating workflows
     grunt.registerTask('default', ['concat', 'watch']);
