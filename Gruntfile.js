@@ -8,7 +8,8 @@ module.exports = function(grunt) {
     // initializing task configuration
     grunt.initConfig({
 
-//        pkg: grunt.file.readJSON('package.json'),
+        // this enables us to use version, name etc in generated files/dirs
+        pkg: grunt.file.readJSON('package.json'),
 
         concat: {
             options: {
@@ -18,10 +19,14 @@ module.exports = function(grunt) {
             },
     
             app: {
-                dest: "build/js/app.min.js",
+                // the files to concatenate
                 src: [
+                    "src/js/vendor/jquery-2.1.1.js",
                     "src/js/app.js"
-                ]
+                ],
+                // the location of the resulting JS file
+                //dest: "build/js/app.min.js",
+                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js'
             }
         }
     });
