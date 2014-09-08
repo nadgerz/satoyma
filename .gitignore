@@ -6,6 +6,9 @@
 build
 tmp
 
+# I presume I should ignore this :)
+bower_components
+
 
 #
 #    IntelliJ
