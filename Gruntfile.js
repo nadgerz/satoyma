@@ -85,6 +85,13 @@ module.exports = function(grunt) {
                 //dest: "build/js/app.min.js",
                 dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js'
             }
+        },
+
+        watch: {
+            app: {
+                files: ["<%= concat.app.src %>"],
+                tasks: ["concat"]
+            }
         }
     });
 
@@ -94,6 +101,7 @@ module.exports = function(grunt) {
 
     // loading external tasks (aka: plugins)
     grunt.loadNpmTasks("grunt-contrib-concat");
+    grunt.loadNpmTasks("grunt-contrib-watch");
 
     // creating workflows
     grunt.registerTask('default', ['concat']);
