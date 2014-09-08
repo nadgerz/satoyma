@@ -89,6 +89,7 @@ module.exports = function(grunt) {
 
         watch: {
             app: {
+                // SELF REFERENTIAL! COOL!
                 files: ["<%= concat.app.src %>"],
                 tasks: ["concat"]
             }
