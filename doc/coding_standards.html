@@ -755,7 +755,7 @@ body .task-list{
 <h1 id="satoyma-javascript-coding-standards">Satoyma Javascript Coding Standards</h1>
 <p>This is a set of coding conventions and rules for use in JavaScript programming.
 It is inspired by the Sun document Code Conventions for the Java Programming Language.
-It is heavily modified of course because (JavaScript is not Java)<a href="http://javascript.crockford.com/javascript.html">javascript not java</a>.</p>
+It is heavily modified of course because <a href="http://javascript.crockford.com/javascript.html">JavaScript is not Java</a>.</p>
 <p>The long-term value of software to an organization is in direct proportion to the quality of the codebase.
 Over its lifetime, a program will be handled by many pairs of hands and eyes. If a program is able to clearly
 communicate its structure and characteristics, it is less likely that it will break when modified in the never-too-distant future.</p>
@@ -797,4 +797,28 @@ by semicolon insertion. The next line should be indented 8 spaces.</p>
 </ul>
 <h3 id="-and-operators-">=== and !== Operators.</h3>
 <p>Use the === and !== operators. The == and != operators do type coercion and should not be used.</p>
+<h3 id="var">var</h3>
+<p>Always use <strong>var</strong> to declare variables.</p>
+<p>When you fail to specify var, the variable gets placed in the global context,
+potentially clobbering existing values. Also, if there&#39;s no declaration, it&#39;s hard
+to tell in what scope a variable lives (e.g., it could be in the Document or Window
+just as easily as in the local scope). So always declare with var.</p>
+<h3 id="constants">Constants</h3>
+<ul>
+<li>Use NAMES_LIKE_THIS for constant values.</li>
+<li>Use @const to indicate a constant (non-overwritable) pointer (a variable or property).</li>
+<li>Never use the const keyword as it&#39;s not supported in Internet Explorer.</li>
+</ul>
+<h4 id="constant-values">Constant values</h4>
+<pre><code> If a value is intended to be constant and immutable, it should be given a name in CONSTANT_VALUE_CASE. ALL_CAPS additionally implies @const (that the value is not overwritable).
+
+ Primitive types (number, string, boolean) are constant values.
+
+ Objects&#39; immutability is more subjective — objects should be considered immutable only if they do not demonstrate observable state change. This is not enforced by the compiler.</code></pre>
+<h4 id="constant-pointers-variables-and-properties-">Constant pointers (variables and properties)</h4>
+<pre><code> The @const annotation on a variable or property implies that it is not overwritable. This is enforced by the compiler at build time. This behavior is consistent with the const keyword (which we do not use due to the lack of support in Internet Explorer).
+
+ A @const annotation on a method additionally implies that the method cannot not be overridden in subclasses.
+
+ A @const annotation on a constructor implies the class cannot be subclassed (akin to final in Java).</code></pre>
 
