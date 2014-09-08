@@ -31,3 +31,20 @@ git config credential.helper 'cache --timeout=31536000'
 [maps.js] [mapsjs]
 
 [mapsjs]: http://www.mapsjs.com/intro.html
+
+Learning about got workflows, with a view to moving to operating *feature branches*
+
+[https://www.atlassian.com/git/workflows]
+
+
+
+
+# Tools
+
+[websync (rsync)](http://furier.github.io/websync/)
+
+[pojoviz](http://maurizzzio.github.io/PojoViz/public/vulcanize.html#readme)
+
+[npmjs - package.json](https://www.npmjs.org/doc/files/package.json.html)
+
+

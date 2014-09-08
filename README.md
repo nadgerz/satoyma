@@ -12,12 +12,11 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 
 	Along the way, we will use (probably):
 
-        Front end:
+        *Front end*:
 
 	* Javascript
 	* Angular.js
-	* Karma
-	* Jasmine
+	* React.js
 	* Vagrant
 	* HTML5
 	* CSS3
@@ -25,27 +24,43 @@ __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 	* jQuery
 	* Responsive Web Design
 
-        Back end:
+        *Back end*:
 
 	* Groovy
 	* Java
-	* Findbugs
-	* PMD
 	* Node.js
 	* Vert.x
-	* Nodeunit
 	* MongoDB
 	* Postgres
 	* Postgis
 
-        Infrastructure :
-	* IntelliJ
+        *Infrastructure* :
+
 	* Travis
 	* Github
 	* AWS
+	* Heroku
+
+	*Development tools*: TBD: How to put links in lists?
+
+	* .jshintrc [Starting from *JSHint Configuration, Strict Edition*][jshint_strict]
+	* WebStorm 8
+	* IntelliJ 13.x+
+	* Grunt
+	* npm
+	* gvm
+	* Findbugs
+	* PMD
 	* Gradle
 	* Git
-	* Heroku
+
+	*Testing tools*
+
+	* Jasmine
+	* Mocha
+	* Karma
+	* Nodeunit
+
 
 We are looking at using Open Street Maps as our background data. [Importing OSM into MongoDB][impmongo]
 
@@ -60,5 +75,5 @@ First steps:
     * mongodb
 
 
-
 [impmongo]: http://derickrethans.nl/importing-osm-into-mongodb.html
+[jshint_strict]: https://gist.github.com/haschek/2595796
