@@ -66,16 +66,20 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                // define a string to put between each file in the concatenated output
-                // separator: ';',
-                stripBanners: true
+                // Concatenated files will be joined on this string.
+                // If you're post-processing concatenated JavaScript files with a minifier,
+                // you may need to use a semicolon ';' as the separator.
+                separator: ';',
+                stripBanners: true,
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
             },
     
             app: {
                 // the files to concatenate
                 src: [
                     "src/js/app.js",
-		    "<%= vendorJs %>"
+                    "<%= vendorJs %>"
                 ],
                 // the location of the resulting JS file
                 //dest: "build/js/app.min.js",
