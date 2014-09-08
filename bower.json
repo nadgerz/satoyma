@@ -1,0 +1,27 @@
+{
+  "name": "satoyma",
+  "version": "0.1.0",
+  "homepage": "https://github.com/nadgerz/satoyma",
+  "authors": [
+    "Stephen A. Ingram <stephen.a.ingram@gmail.com>"
+  ],
+  "description": "Bower json file for satoyma project",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "mapping"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
