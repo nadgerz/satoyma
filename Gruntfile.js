@@ -104,6 +104,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
 
     // creating workflows
-    grunt.registerTask('default', ['concat']);
+    grunt.registerTask('default', ['concat', 'watch']);
 
 };
