@@ -78,8 +78,8 @@ module.exports = function(grunt) {
             app: {
                 // the files to concatenate
                 src: [
-                    "src/js/app.js",
-                    "<%= vendorJs %>"
+                    "<%= vendorJs %>",
+                    "src/js/app.js"
                 ],
                 // the location of the resulting JS file
                 //dest: "build/js/app.min.js",
