@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
 
     // loading local tasks
-//    grunt.loadTasks("tasks");
+    grunt.loadTasks("tasks");
 
     // loading external tasks (aka: plugins)
     grunt.loadNpmTasks("grunt-contrib-concat");
