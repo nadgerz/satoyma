@@ -23,21 +23,11 @@ module.exports = function(grunt) {
 
             'bower_components//jquery-ui/jquery-ui.js',
             'bower_components//jquery-ui/ui/i18n/datepicker-de.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-en-AU.js',
             'bower_components//jquery-ui/ui/i18n/datepicker-en-GB.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-en-NZ.js',
             'bower_components//jquery-ui/ui/i18n/datepicker-es.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-fr-CH.js',
             'bower_components//jquery-ui/ui/i18n/datepicker-fr.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-it-CH.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-it.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-nl-BE.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-nl.js',
             'bower_components//jquery-ui/ui/i18n/datepicker-no.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-pl.js',
-//            'bower_components//jquery-ui/ui/i18n/datepicker-pt.js',
 
-//            'bower_components//lodash/dist/lodash.compat.js',
             'bower_components//lodash/dist/lodash.js',
 //            'bower_components//lodash/dist/lodash.underscore.js',
 
@@ -81,9 +71,12 @@ module.exports = function(grunt) {
                     "<%= vendorJs %>",
                     "src/js/app.js"
                 ],
+
                 // the location of the resulting JS file
                 //dest: "build/js/app.min.js",
-                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js'
+                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js',
+
+                nonull: true,
             }
         },
 
