@@ -80,13 +80,33 @@ module.exports = function(grunt) {
             }
         },
 
+
         watch: {
             app: {
                 // SELF REFERENTIAL! COOL!
                 files: ["<%= concat.app.src %>"],
                 tasks: ["concat"]
             }
-        }
+        },
+
+
+	copy: {
+	  main: {
+	    files: [
+	      // includes files within path
+//	      {expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
+
+	      // includes files within path and its sub-directories
+//	      {expand: true, src: ['path/**'], dest: 'dest/'},
+
+	      // makes all src relative to cwd
+//	      {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
+
+	      // flattens results to a single level
+//	      {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
+	    ]
+	  }
+	}
     });
 
 
@@ -97,8 +117,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-copy");
 
     // creating workflows
-    grunt.registerTask('default', ['concat', 'watch']);
-
+//    grunt.registerTask('default', ['concat', 'watch']);
+    grunt.registerTask('default', ['concat', 'copy']);
 };
