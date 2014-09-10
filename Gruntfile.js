@@ -84,8 +84,8 @@ module.exports = function(grunt) {
                 // you may need to use a semicolon ';' as the separator.
                 separator: ';',
                 stripBanners: true,
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
+//                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+//                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
             },
     
             app: {
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: "<%= banner %>"
+//                banner: "<%= banner %>"
             },
 
             dist: {
