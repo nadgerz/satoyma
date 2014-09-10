@@ -71,7 +71,14 @@ module.exports = function(grunt) {
 
                         'dummy.js'
                     ],
-                }
+                },
+
+                app: {
+                    src: [
+                        "src/js/app.js"
+                    ],
+                },
+
             }
         },
 
@@ -103,7 +110,7 @@ module.exports = function(grunt) {
                 // the files to concatenate
                 src: [
                     "<%= files.js.vendor.src %>",
-                    "src/js/app.js"
+                    "<%= files.js.app.src %>",
                 ],
 
                 // the location of the resulting JS file
@@ -244,19 +251,11 @@ module.exports = function(grunt) {
     //
     // loading external tasks (aka: plugins)
 
+    //
     // Loads all plugins that match "grunt-", in this case all of our current plugins
-    require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks)
-    /*
-    grunt.loadNpmTasks("grunt-contrib-clean");
-    grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks("grunt-contrib-copy");
-    grunt.loadNpmTasks("grunt-contrib-less");
-    grunt.loadNpmTasks("grunt-contrib-uglify");
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-open");
-    */
+    require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
 
-
+    //
     // creating workflows
     grunt.registerTask('default', ['concat', 'copy']);
     grunt.registerTask("build", ["concat", "uglify", "copy"]);
