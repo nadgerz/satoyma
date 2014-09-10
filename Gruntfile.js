@@ -75,10 +75,19 @@ module.exports = function(grunt) {
             }
         },
 
+
         //
+        //    =========================================
+        //    ========== task configurations ==========
+        //    =========================================
         //
-        //    task configurations ===================================================
-        //
+        open: {
+            dev: {
+                path: "http://localhost:<%= server.web.port %>"
+            }
+        },
+
+
         concat: {
             options: {
                 // Concatenated files will be joined on this string.
@@ -238,6 +247,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-open");
 
     // creating workflows
     grunt.registerTask('default', ['concat', 'copy']);
