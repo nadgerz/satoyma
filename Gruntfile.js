@@ -140,6 +140,13 @@ module.exports = function(grunt) {
 //              {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
             ]
           }
+        },
+
+        clean: {
+            workspaces: [
+                "build",
+                "dist"
+            ]
         }
     });
 
@@ -148,10 +155,11 @@ module.exports = function(grunt) {
     grunt.loadTasks("tasks");
 
     // loading external tasks (aka: plugins)
+    grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-watch");
 
     // creating workflows
 //    grunt.registerTask('default', ['concat', 'watch']);
