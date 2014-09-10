@@ -151,21 +151,28 @@ module.exports = function(grunt) {
 
 
         copy: {
-          main: {
-            files: [
-              // includes files within path
-//              {expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
+            main: {
+                files: [
+                    // includes files within path
+                    // {expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
 
-              // includes files within path and its sub-directories
-//              {expand: true, src: ['path/**'], dest: 'dest/'},
+                    // includes files within path and its sub-directories
+                    // {expand: true, src: ['path/**'], dest: 'dest/'},
 
-              // makes all src relative to cwd
-//              {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
+                    // makes all src relative to cwd
+                    // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
 
-              // flattens results to a single level
-//              {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
-            ]
-          }
+                    // flattens results to a single level
+                    // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'}
+                ]
+            },
+
+            html: {
+                files: {
+                    "generated/index.html" : "<%= files.html.src %>"
+                    "dist/index.html"      : "<%= files.html.src %>"
+                }
+            }
         },
 
         clean: {
@@ -173,6 +180,21 @@ module.exports = function(grunt) {
                 "build",
                 "dist"
             ]
+        },
+
+        mongo: {
+            web: {
+                root: "build"
+                port: 8000
+            }
+        },
+
+        // so a internal task, like 'server start/stop' can grab these from here
+        server: {
+            web: {
+                root: "build"
+                port: 8000
+            }
         }
     });
 
