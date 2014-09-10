@@ -15,8 +15,8 @@ module.exports = function(grunt) {
         banner: "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - " +
                 "<%= grunt.template.today(\"yyyy-mm-dd\") %>\n" +
                 "<%= pkg.homepage ? \"* \" + pkg.homepage + \"\\n\" : \"\" %>" +
-                "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.contributors[0].name %>;\n" +
-                "*Contributors: <%= _.pluck(pkg.contributors, \"name\").join(\", \") %>; " +
+                "* Copyright (c) <%= grunt.template.today(\"yyyy\") %>;\n" +
+                "* Contributors: <%= _.pluck(pkg.contributors, \"name\").join(\", \") %>;\n" +
                 "* Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n",
 
         // files that our tasks will use
@@ -196,7 +196,11 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: "<%= banner %>"
+                banner: "<%= banner %>",
+                // mangle: false,
+                // beautify: true,
+                // compress: false,
+                // report: "gzip",
             },
 
             dist: {
