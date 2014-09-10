@@ -11,11 +11,13 @@ module.exports = function(grunt) {
         // this enables us to use version, name etc in generated files/dirs
         pkg: grunt.file.readJSON('package.json'),
 
+        // using meta data
         banner: "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - " +
                 "<%= grunt.template.today(\"yyyy-mm-dd\") %>\n" +
                 "<%= pkg.homepage ? \"* \" + pkg.homepage + \"\\n\" : \"\" %>" +
-                "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author.name %>;" +
-                " Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n",
+                "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.contributors[0].name %>;\n" +
+                "*Contributors: <%= _.pluck(pkg.contributors, \"name\").join(\", \") %>; " +
+                "* Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n",
 
         // files that our tasks will use
         files: {
@@ -83,7 +85,7 @@ module.exports = function(grunt) {
                 // If you're post-processing concatenated JavaScript files with a minifier,
                 // you may need to use a semicolon ';' as the separator.
                 separator: ';',
-                stripBanners: true,
+//                stripBanners: true,
 //                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 //                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
             },
@@ -194,7 +196,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-//                banner: "<%= banner %>"
+                banner: "<%= banner %>"
             },
 
             dist: {
