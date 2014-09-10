@@ -26,9 +26,9 @@
     "email": "stephen.a.ingram@gmail.com"
   },
   "licenses": [
-      {
-          "type": "MIT"
-      }
+    {
+      "type": "MIT"
+    }
   ],
   "keywords": [
     "maps",
