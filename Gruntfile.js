@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                 "<%= grunt.template.today(\"yyyy-mm-dd\") %>\n" +
                 "<%= pkg.homepage ? \"* \" + pkg.homepage + \"\\n\" : \"\" %>" +
                 "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author.name %>;" +
-                " Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n"
+                " Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n",
 
         // files that our tasks will use
         files: {
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
 
             html: {
                 files: {
-                    "generated/index.html" : "<%= files.html.src %>"
+                    "generated/index.html" : "<%= files.html.src %>",
                     "dist/index.html"      : "<%= files.html.src %>"
                 }
             }
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
             },
 
             dist: {
-                src: "<%= concat.app.dest %>", # input from the concat process
+                src: "<%= concat.app.dest %>", // input from the concat process
                 dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.min.js'
             }
         },
@@ -206,7 +206,7 @@ module.exports = function(grunt) {
 
         mongo: {
             web: {
-                root: "build"
+                root: "build",
                 port: 8000
             }
         },
@@ -215,7 +215,7 @@ module.exports = function(grunt) {
         // so a internal task, like 'server start/stop' can grab these from here
         server: {
             web: {
-                root: "build"
+                root: "build",
                 port: 8000
             }
         }
@@ -230,10 +230,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
     // creating workflows
-//    grunt.registerTask('default', ['concat', 'watch']);
     grunt.registerTask('default', ['concat', 'copy']);
-    grunt.registerTask("build", ["less:dist", "concat", "copy"]);
+    grunt.registerTask("build", ["concat", "uglify", "copy"]);
 };
