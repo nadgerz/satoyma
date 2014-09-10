@@ -237,10 +237,16 @@ module.exports = function(grunt) {
     });
 
 
+    //
     // loading local tasks
     grunt.loadTasks("tasks");
 
+    //
     // loading external tasks (aka: plugins)
+
+    // Loads all plugins that match "grunt-", in this case all of our current plugins
+    require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks)
+    /*
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-copy");
@@ -248,6 +254,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-open");
+    */
+
 
     // creating workflows
     grunt.registerTask('default', ['concat', 'copy']);
