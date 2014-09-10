@@ -67,6 +67,9 @@ module.exports = function(grunt) {
             }
         },
 
+        //
+        //    task configurations ===================================================
+        //
         concat: {
             options: {
                 // Concatenated files will be joined on this string.
@@ -94,6 +97,28 @@ module.exports = function(grunt) {
         },
 
 
+        less: {
+            options: {
+                paths: ["app/css"],
+                ieCompat: false
+            },
+
+            dev: {
+                src: "<%= files.less.src %>",
+                dest: "generated/css/style.css"
+            },
+
+            dist: {
+                options: {
+                    cleancss: true,
+                    compress: true
+                },
+
+                src: "<%= files.less.src %>",
+                dest: "dist/css/style.css"
+            }
+        },
+
         watch: {
             options: {
                 // need chrome livereload extension
@@ -101,6 +126,7 @@ module.exports = function(grunt) {
                 livereload: true
             },
 
+            // targets for watch
             html: {
                 files: ["<%= files.html.src %>"],
                 tasks: ["copy"]
@@ -164,4 +190,5 @@ module.exports = function(grunt) {
     // creating workflows
 //    grunt.registerTask('default', ['concat', 'watch']);
     grunt.registerTask('default', ['concat', 'copy']);
+    grunt.registerTask("build", ["less:dist", "concat", "copy"]);
 };
