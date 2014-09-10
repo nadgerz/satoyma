@@ -32,44 +32,42 @@ module.exports = function(grunt) {
             js: {
                 vendor: {
                     src: [
-                        'bower_components//backbone/backbone.js',
-                        'bower_components//backbone/index.js',
+                        'bower_components/backbone/backbone.js',
+                        'bower_components/backbone/index.js',
 
-                        'bower_components//bootstrap/dist/js/bootstrap.js',
+                        'bower_components/bootstrap/dist/js/bootstrap.js',
 
-                        'bower_components//jquery/dist/jquery.js',
+                        'bower_components/jquery/dist/jquery.js',
 
-                        'bower_components//jquery-ui/jquery-ui.js',
-                        'bower_components//jquery-ui/ui/i18n/datepicker-de.js',
-                        'bower_components//jquery-ui/ui/i18n/datepicker-en-GB.js',
-                        'bower_components//jquery-ui/ui/i18n/datepicker-es.js',
-                        'bower_components//jquery-ui/ui/i18n/datepicker-fr.js',
-                        'bower_components//jquery-ui/ui/i18n/datepicker-no.js',
+                        'bower_components/jquery-ui/jquery-ui.js',
+                        'bower_components/jquery-ui/ui/i18n/datepicker-de.js',
+                        'bower_components/jquery-ui/ui/i18n/datepicker-en-GB.js',
+                        'bower_components/jquery-ui/ui/i18n/datepicker-es.js',
+                        'bower_components/jquery-ui/ui/i18n/datepicker-fr.js',
+                        'bower_components/jquery-ui/ui/i18n/datepicker-no.js',
 
-                        'bower_components//lodash/dist/lodash.js',
-//            'bower_components//lodash/dist/lodash.underscore.js',
+                        'bower_components/lodash/dist/lodash.js',
+//            'bower_components/lodash/dist/lodash.underscore.js',
 
-                        'bower_components//moment/benchmarks/clone.js',
-                        'bower_components//moment/locale/de-at.js',
-                        'bower_components//moment/locale/de.js',
-                        'bower_components//moment/locale/en-gb.js',
-                        'bower_components//moment/locale/es.js',
-                        'bower_components//moment/locale/fr.js',
-                        'bower_components//moment/locale/it.js',
-                        'bower_components//moment/locale/nl.js',
-                        'bower_components//moment/locale/pl.js',
-                        'bower_components//moment/locale/pt.js',
-                        'bower_components//moment/moment.js',
+                        'bower_components/moment/benchmarks/clone.js',
+                        'bower_components/moment/locale/de-at.js',
+                        'bower_components/moment/locale/de.js',
+                        'bower_components/moment/locale/en-gb.js',
+                        'bower_components/moment/locale/es.js',
+                        'bower_components/moment/locale/fr.js',
+                        'bower_components/moment/locale/it.js',
+                        'bower_components/moment/locale/nl.js',
+                        'bower_components/moment/locale/pl.js',
+                        'bower_components/moment/locale/pt.js',
+                        'bower_components/moment/moment.js',
 
-                        'bower_components//react/JSXTransformer.js',
-                        'bower_components//react/react-with-addons.js',
-                        'bower_components//react/react.js',
+                        'bower_components/react/JSXTransformer.js',
+                        'bower_components/react/react-with-addons.js',
+                        'bower_components/react/react.js',
 
-                        'bower_components//requirejs/require.js',
+                        'bower_components/requirejs/require.js',
 
-                        'bower_components//underscore/underscore.js',
-
-                        'dummy.js'
+                        'bower_components/underscore/underscore.js',
                     ],
                 },
 
@@ -78,7 +76,14 @@ module.exports = function(grunt) {
                         "src/js/app.js"
                     ],
                 },
+            },
 
+            coffee: {
+                vendor: {
+                    src: [
+                        'glibble/neepneep/boopie.coffee',
+                    ]
+                }
             }
         },
 
@@ -88,6 +93,16 @@ module.exports = function(grunt) {
         //    ========== task configurations ==========
         //    =========================================
         //
+        coffee: {
+            compile: {
+                expand: true,
+                cwd: 'coffee',
+                src: '**/*.coffee',
+                dest: '<%= files.coffee.dest %>',
+                ext: '.js',
+            }
+        },
+
         open: {
             dev: {
                 path: "http://localhost:<%= server.web.port %>"
