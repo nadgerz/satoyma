@@ -230,7 +230,7 @@ module.exports = function(grunt) {
         // so a internal task, like 'server start/stop' can grab these from here
         server: {
             web: {
-                root: "#{process.env.SERVER_ROOT || 'build'}",
+                root: "" + (process.env.SERVER_ROOT || 'build'),
                 port: 8000
             }
         }
