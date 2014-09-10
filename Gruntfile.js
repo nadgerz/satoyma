@@ -178,6 +178,11 @@ module.exports = function(grunt) {
                 tasks: ["concat"]
             },
 
+            coffee: {
+                files: ["coffee/**/*.coffee"]
+                tasks: ["coffee", "concat"]
+            },
+
             less: {
                 files: ["<%= files.less.src %>"],
                 tasks: ["less:dev"]
