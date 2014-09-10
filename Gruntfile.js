@@ -277,6 +277,8 @@ module.exports = function(grunt) {
 
     //
     // creating workflows
+//    grunt.registerTask('default', ['less:dev', 'newer:coffee', 'concat', 'copy', 'server' ]);
+//    grunt.registerTask('build', ['clean', 'less:dev', 'newer:coffee', 'concat', 'uglify', 'server' ]);
     grunt.registerTask('default', ['concat', 'copy']);
     grunt.registerTask("build", ["concat", "uglify", "copy"]);
 };
