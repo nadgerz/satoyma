@@ -11,6 +11,12 @@ module.exports = function(grunt) {
         // this enables us to use version, name etc in generated files/dirs
         pkg: grunt.file.readJSON('package.json'),
 
+        banner: "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - " +
+                "<%= grunt.template.today(\"yyyy-mm-dd\") %>\n" +
+                "<%= pkg.homepage ? \"* \" + pkg.homepage + \"\\n\" : \"\" %>" +
+                "* Copyright (c) <%= grunt.template.today(\"yyyy\") %> <%= pkg.author.name %>;" +
+                " Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n"
+
         // files that our tasks will use
         files: {
             html: {
@@ -68,6 +74,7 @@ module.exports = function(grunt) {
         },
 
         //
+        //
         //    task configurations ===================================================
         //
         concat: {
@@ -118,6 +125,7 @@ module.exports = function(grunt) {
                 dest: "dist/css/style.css"
             }
         },
+
 
         watch: {
             options: {
@@ -175,6 +183,7 @@ module.exports = function(grunt) {
             }
         },
 
+
         clean: {
             workspaces: [
                 "build",
@@ -182,12 +191,26 @@ module.exports = function(grunt) {
             ]
         },
 
+
+        uglify: {
+            options: {
+                banner: "<%= banner %>"
+            },
+
+            dist: {
+                src: "<%= concat.app.dest %>", # input from the concat process
+                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.min.js'
+            }
+        },
+
+
         mongo: {
             web: {
                 root: "build"
                 port: 8000
             }
         },
+
 
         // so a internal task, like 'server start/stop' can grab these from here
         server: {
