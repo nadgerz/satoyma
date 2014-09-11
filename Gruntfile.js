@@ -194,6 +194,12 @@ module.exports = function(grunt) {
                 tasks: ["coffee", "concat"]
             },
 
+            // TODO - get this in alphabetical order
+            templates: {
+                files: ["src/templates/**/*.html"],
+                tasks: ["clean", "build"]
+            },
+
             less: {
                 files: ["<%= files.less.src %>"],
                 tasks: ["less:dev"]
