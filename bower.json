@@ -37,6 +37,11 @@
     "react": "~0.11.1",
     "normalize-css": "~3.0.1",
     "extend.js": "~0.2.2",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.3.3",
+    "handlebars": "~2.0.0",
+    "backbone.stickit": "~0.8.0"
+  },
+  "devDependencies": {
+    "backbone-fixtures": "*"
   }
 }
