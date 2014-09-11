@@ -127,15 +127,17 @@ module.exports = function(grunt) {
 //                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
             },
     
+
             app: {
                 // the files to concatenate
                 src: [
                     "<%= files.js.vendor.src %>",
                     "<%= files.js.app.src %>",
+                    "<%= files.coffee.compiled %>",
+                    "<%= files.templates.compiled %>",
                 ],
 
                 // the location of the resulting JS file
-                //dest: "build/js/app.min.js",
                 dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js',
 
                 nonull: true,
