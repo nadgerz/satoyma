@@ -160,6 +160,11 @@ module.exports = function(grunt) {
         },
 
 
+        newer: {
+            timestamps: "generated/compilation-timestamps"
+        },
+
+
         watch: {
             options: {
                 // need chrome livereload extension
