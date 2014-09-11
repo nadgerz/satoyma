@@ -139,6 +139,20 @@ module.exports = function(grunt) {
         },
 
 
+        browserify: {
+            app: {
+            // TBD fix these locations
+                files: {
+                    "<%= files.js.app.compiled %>" : "<%= files.js.app.main %>"
+                },
+
+                options: {
+                    debug: true,
+                    transform: ["coffeeify"]
+                }
+            }
+        },
+            
         concat_sourcemap: {
             options: {
                 // Concatenated files will be joined on this string.
