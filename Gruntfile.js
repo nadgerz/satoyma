@@ -241,6 +241,19 @@ module.exports = function(grunt) {
         },
 
 
+        handlebars: {
+            options: {
+                namespace: "JST",
+                wrapped: true
+            },
+
+            compile: {
+                src: "<%= files.templates.src %>",
+                dest: "<%= files.templates.compiled %>",
+            },
+        },
+
+
         copy: {
             main: {
                 files: [
