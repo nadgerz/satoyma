@@ -84,7 +84,13 @@ module.exports = function(grunt) {
                         'glibble/neepneep/boopie.coffee',
                     ]
                 }
-            }
+            },
+
+            templates: {
+                src: "app/templates/**/*.html",
+                compiled: "generated/template-cache.js"
+            },
+
         },
 
 
@@ -184,7 +190,7 @@ module.exports = function(grunt) {
             },
 
             coffee: {
-                files: ["coffee/**/*.coffee"]
+                files: ["coffee/**/*.coffee"],
                 tasks: ["coffee", "concat"]
             },
 
