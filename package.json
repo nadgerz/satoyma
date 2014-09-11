@@ -55,6 +55,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-check-modules": "^0.2.0",
+    "grunt-concat-sourcemap": "^0.4.3",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-coffee": "^0.11.1",
     "grunt-contrib-compress": "^0.11.0",
