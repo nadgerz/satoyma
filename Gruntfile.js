@@ -19,6 +19,17 @@ module.exports = function(grunt) {
                 "* Contributors: <%= _.pluck(pkg.contributors, \"name\").join(\", \") %>;\n" +
                 "* Licensed <%= _.pluck(pkg.licenses, \"type\").join(\", \") %> */\n",
 
+        destinations: {
+            compiled: {
+                coffee: [ "generated/compiled-coffee" ],
+                templates: [ "generated/compiled-templates" ]
+            },
+        },
+
+        outputName: '<%= pkg.name %>.<%= pkg.version %>',
+
+        minifiedName: '<%= outputName %>.min.js',
+
         // files that our tasks will use
         files: {
             html: {
@@ -61,9 +72,9 @@ module.exports = function(grunt) {
                         'bower_components/moment/locale/pt.js',
                         'bower_components/moment/moment.js',
 
-                        'bower_components/react/JSXTransformer.js',
+//                        'bower_components/react/JSXTransformer.js',
                         'bower_components/react/react-with-addons.js',
-                        'bower_components/react/react.js',
+//                        'bower_components/react/react.js',
 
                         'bower_components/requirejs/require.js',
 
@@ -79,6 +90,18 @@ module.exports = function(grunt) {
             },
 
             coffee: {
+                dest: "<%= destinations.compiled.coffee %>",
+
+                compiled: [
+                    "<%= destinations.compiled.coffee %>/config/**/*.js",
+                    "<%= destinations.compiled.coffee %>/app.js",
+                    "<%= destinations.compiled.coffee %>/data/**/*.js",
+                    "<%= destinations.compiled.coffee %>/directives/**/*.js",
+                    "<%= destinations.compiled.coffee %>/controllers/**/*.js",
+                    "<%= destinations.compiled.coffee %>/services/**/*.js",
+                    "<%= destinations.compiled.coffee %>/**/*.js",
+                ],
+
                 vendor: {
                     src: [
                         'glibble/neepneep/boopie.coffee',
@@ -88,7 +111,7 @@ module.exports = function(grunt) {
 
             templates: {
                 src: "app/templates/**/*.html",
-                compiled: "generated/template-cache.js"
+                compiled: "destinations.compiled.templates %>"
             },
 
         },
@@ -116,20 +139,23 @@ module.exports = function(grunt) {
         },
 
 
-        concat: {
+        concat_sourcemap: {
             options: {
                 // Concatenated files will be joined on this string.
                 // If you're post-processing concatenated JavaScript files with a minifier,
                 // you may need to use a semicolon ';' as the separator.
                 separator: ';',
+                sourcesContent: true,
 //                stripBanners: true,
 //                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
 //                        '<%= grunt.template.today("yyyy-mm-dd") %> */',
             },
     
-
             app: {
                 // the files to concatenate
+                //
+                // If any of these targets do not exist, you will get this error, using concat_sourcemap
+                // 'Warning: must provide pattern Use --force to continue.'
                 src: [
                     "<%= files.js.vendor.src %>",
                     "<%= files.js.app.src %>",
@@ -138,7 +164,7 @@ module.exports = function(grunt) {
                 ],
 
                 // the location of the resulting JS file
-                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.concat.js',
+                dest: 'build/dest/<%= outputName %>.concat.js',
 
                 nonull: true,
             }
@@ -188,12 +214,12 @@ module.exports = function(grunt) {
 
             js: {
                 files: ["<%= files.js.vendor.src %>"],
-                tasks: ["concat"]
+                tasks: ["concat_sourcemap"]
             },
 
             coffee: {
                 files: ["src/coffee/**/*.coffee"],
-                tasks: ["coffee", "concat"]
+                tasks: ["coffee", "concat_sourcemap"]
             },
 
             // TODO - get this in alphabetical order
@@ -210,7 +236,7 @@ module.exports = function(grunt) {
             app: {
                 // SELF REFERENTIAL! COOL!
                 files: ["<%= concat.app.src %>"],
-                tasks: ["concat"]
+                tasks: ["concat_sourcemap"]
             }
         },
 
@@ -259,8 +285,10 @@ module.exports = function(grunt) {
             },
 
             dist: {
-                src: "<%= concat.app.dest %>", // input from the concat process
-                dest: 'build/dest/<%= pkg.name %>.<%= pkg.version %>.min.js'
+                sourceMapIn: "build/dest/<%= minifiedName %>.map",
+                sourceMap:   "build/dest/<%= minifiedName %>.map",
+                src: "<%= concat_sourcemap.app.dest %>", // input from the concat_sourcemap process
+                dest: 'build/dest/<%= minifiedName %>',
             }
         },
 
@@ -298,6 +326,6 @@ module.exports = function(grunt) {
     // creating workflows
 //    grunt.registerTask('default', ['less:dev', 'newer:coffee', 'concat', 'copy', 'server' ]);
 //    grunt.registerTask('build', ['clean', 'less:dev', 'newer:coffee', 'concat', 'uglify', 'server' ]);
-    grunt.registerTask('default', ['concat', 'copy']);
-    grunt.registerTask("build", ["concat", "uglify", "copy"]);
+    grunt.registerTask('default', ['concat_sourcemap', 'copy']);
+    grunt.registerTask("build", ["concat_sourcemap", "uglify", "copy"]);
 };
