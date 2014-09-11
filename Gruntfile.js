@@ -190,7 +190,7 @@ module.exports = function(grunt) {
             },
 
             coffee: {
-                files: ["coffee/**/*.coffee"],
+                files: ["src/coffee/**/*.coffee"],
                 tasks: ["coffee", "concat"]
             },
 
