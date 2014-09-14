@@ -298,7 +298,15 @@ module.exports = function(grunt) {
             workspaces: [
                 "build",
                 "dist"
-            ]
+            ],
+
+            example: [{
+                dot: true,
+                src: [
+                    'dist/*',
+                    '!dist/.git*'
+                ]
+            }]
         },
 
 
