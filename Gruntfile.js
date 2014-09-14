@@ -310,6 +310,24 @@ module.exports = function(grunt) {
         },
 
 
+        htmlmin: {
+            build: {
+                options: {
+                    collapseBooleanAttributes: true,
+                    removeAttributeQuotes: true,
+                    removeRedundantAttributes: true,
+                    removeEmptyAttributes: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    src: '{,*/}*.html',
+                    dest: 'dist'
+                }]
+            }
+        },
+
+
         uglify: {
             options: {
                 banner: "<%= banner %>",
