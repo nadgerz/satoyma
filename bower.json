@@ -39,7 +39,8 @@
     "extend.js": "~0.2.2",
     "underscore.string": "~2.3.3",
     "handlebars": "~2.0.0",
-    "backbone.stickit": "~0.8.0"
+    "backbone.stickit": "~0.8.0",
+    "intl": "~0.1.4"
   },
   "devDependencies": {
     "backbone-fixtures": "*"
