@@ -122,3 +122,82 @@ CoffeeScript
 [CoffeeScript Cookbook](http://coffeescriptcookbook.com)
 
 [CoffeeScript Ristretto](https://leanpub.com/coffeescript-ristretto)
+
+
+
+TODO: (no particular order)
+===========================
+
+Initial screen; grey-scale of where the last user was?
+
+Standard Nav at top
+
+   Sign in/Log In (i18n)
+
+Header bar - pull down for About
+
+Sign in in centre; rounded and standard
+
+Forgot password... 
+
+Register
+
+Encryption of passwords/email?
+
+Success = fancy slide to color to their initial startup or their last position, or if first time, standard zoom for app
+
+Fail = shake
+
+Navigation bar = layers /checkbox (later = layering order)
+
+Backgrounds choices
+
+User/group/world = Mongoose
+
+User => list of valid features + access modes
+
+Groups = any 'true' = pass
+
+place
+edit
+rotate
+    http://paperjs.org/tutorials/geometry/vector-geometry/
+    Vektor.js  Paper.js
+
+delete
+scale
+attrs
+
+Actions of selected groups
+
+How to select groups
+
+GoTo... fid/ xy, latlong
+
+Buttons to place objects
+
+Section to edit/rotate/scale
+
+styles on features
+   
+
+geom on a feature
+   could that mean alternative geoms? - like simplified geom
+
+Email in image and have placed on map
+
+   s6_placePhoto mimic
+
+
+http://techslides.com/50-javascript-libraries-and-plugins-for-maps/
+
+Chess:
+http://jointjs.com/api
+
+
+
+ELEPHANT IN THE ROOM
+    plotting
+    routing
+    jobs
+    legend
