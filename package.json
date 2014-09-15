@@ -83,6 +83,7 @@
     "grunt-htmlhint": "^0.4.1",
     "grunt-jasmine-node": "^0.2.1",
     "grunt-markdown": "^0.6.1",
+    "grunt-mongoimport": "^0.1.5",
     "grunt-open": "^0.2.3",
     "grunt-tar.gz": "^0.0.3",
     "matchdep": "^0.3.0",
