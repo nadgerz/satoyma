@@ -386,6 +386,17 @@ module.exports = function(grunt) {
     // Loads all plugins that match "grunt-", in this case all of our current plugins
     require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
 
+    // load non-grunt- plugins
+    var nonGruntPlugins = [
+        'grunt-cafe-mocha',
+        'grunt-contrib-jshint',
+        'grunt-exec',
+    ];
+
+    nonGruntPlugins.forEach(function(task){
+        grunt.loadNpmTasks(task);
+    });
+
     //
     // creating workflows
 //    grunt.registerTask('default', ['less:dev', 'newer:coffee', 'concat', 'copy', 'server' ]);
