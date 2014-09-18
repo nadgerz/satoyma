@@ -122,6 +122,15 @@ module.exports = function(grunt) {
         //    ========== task configurations ==========
         //    =========================================
         //
+        cafemocha: {
+            all: {
+                src: 'qa/tests-*.js',
+                options: {
+                    ui: 'tdd'
+                },
+            }
+        },
+
         coffee: {
             compile: {
                 expand: true,
