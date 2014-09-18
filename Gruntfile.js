@@ -360,6 +360,17 @@ module.exports = function(grunt) {
                 root: "" + (process.env.SERVER_ROOT || 'build'),
                 port: 8000
             }
+        },
+
+        license_finder: {
+            all: {
+                options: {
+                    production: true,
+                    directory: '/training/subjects/programming/web/satoyma',
+                    out: '/training/subjects/programming/web/satoyma/licenses.txt',
+//                    csv: true
+                }
+            }
         }
     });
 
