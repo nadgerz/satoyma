@@ -1,5 +1,7 @@
 # satoyma
 
+[ ![Codeship Status for nadgerz/satoyma](https://www.codeship.io/projects/93ea2030-2646-0132-40e6-7aa7d9a033ce/status)](https://www.codeship.io/projects/37424)
+
 __S__teve __a__nd __T__om's __O__ne __Y__ear __M__apping __A__pplication
 
 	This is a long experiment.
