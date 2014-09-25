@@ -19,9 +19,14 @@ function findJobs(query) {
     return Promise.cast(mongoose.model('Job').find(query).exec());
 }
 
+var createJob = Promise.promisify(Job.create, Job);
+
 exports.seedJobs = function() {
-    findJobs({}).then(function(collection) {
+    retrun findJobs({}).then(function(collection) {
         if (collection.length === 0) {
+            return Promise.map(jobs, function(job) {
+                return createJob(job);
+            });
         }
     });
 };
