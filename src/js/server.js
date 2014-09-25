@@ -1,4 +1,4 @@
-var express = reequire('express');
+var express = require('express');
 
 var app = express();
 
@@ -6,8 +6,11 @@ app.set('views', __dirname);
 app.set('view engine', 'jade');
 
 app.get('*', function(req, res) {
-    res.remder('index');
+    res.render('index');
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000;
+var ip   = process.env.IP   || "localhost";
+
+app.listen(port, ip);
 
