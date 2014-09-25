@@ -2,6 +2,7 @@ var expect = require("chai").expect;
 var mongoose = require('mongoose');
 var jobModel = require('../models/Job');
 var Promise = require('bluebird');
+var jobsData = require('../jobs-data.js');
 
 function resetJobs() {
     return new Promise( function(resolve, reject) {
@@ -23,7 +24,7 @@ describe("get jobs", function() {
         connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
             .then(resetJobs)
             .then(jobModel.seedJobs)
-            .then(jobModel.findJobs)
+            .then(jobsData.findJobs)
             .then(function(collection) {
                 jobs = collection;
                 done();
