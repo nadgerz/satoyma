@@ -22,7 +22,7 @@ describe("get jobs", function() {
 //        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
         connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
-            .then.resetJobs()
+            .then(resetJobs)
             .then(jobModel.seedJobs)
             .then(findJobs)
             .then(function(jobsList) {
