@@ -30,7 +30,7 @@ describe("get jobs", function() {
             });
     });
 
-    it("should never be empty since jobs are seeded", function(done) {
+    it("should never be empty since jobs are seeded", function() {
         expect(jobs.length).to.be.at.least(1);
     });
 
