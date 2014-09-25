@@ -5,3 +5,15 @@ var jobSchema = mongoose.Schema({
     description: {type:String}
 });
 
+var Job = mongoose.model('Job', jobSchema);
+
+exports.seedJobs = function() {
+    Job.find({}).exec(function(error, collection) {
+        if (collection.length === 0) {
+            Job.create({title: 'Tom Corbin', description: 'Hanging out in Texas'});
+            Job.create({title: 'Steve Ingram', description: 'Hanging out in Berlin'});
+            Job.create({title: 'Kerstin Dengl', description: 'Hanging out in Augsburg'});
+            Job.create({title: 'Ken Southerland', description: 'Hanging out in Cloud Cuckoo Land'});
+        }
+    });
+}
