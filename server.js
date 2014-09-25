@@ -22,8 +22,8 @@ app.get('*', function(req, res) {
 var port = process.env.PORT || 3000;
 var ip   = process.env.IP   || "localhost";
 
-mongoose.connect('mongodb://localhost/jobfinder');
-//mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder');
+//mongoose.connect('mongodb://localhost/jobfinder');
+mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder');
 
 
 var conn = mongoose.connection;
