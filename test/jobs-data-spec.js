@@ -15,7 +15,7 @@ var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
 describe("get jobs", function() {
 
-    var jobsList;
+    var jobs;
 
     before(function(done) {
 //        connectDB('mongodb://localhost/jobfinder')
@@ -24,13 +24,14 @@ describe("get jobs", function() {
             .then(resetJobs)
             .then(jobModel.seedJobs)
             .then(jobModel.findJobs)
-            .then(function(jobsList) {
+            .then(function(collection) {
+                jobs = collection;
                 done();
             });
     });
 
     it("should never be empty since jobs are seeded", function(done) {
-        expect(jobsList.length).to.be.at.least(1);
+        expect(jobs.length).to.be.at.least(1);
     });
 
     it("should have a job with a title", function(done) {
