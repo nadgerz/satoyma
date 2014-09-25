@@ -16,6 +16,5 @@ var ip   = process.env.IP   || "localhost";
 
 app.listen(port, ip);
 
-console.log(__dirname);
 console.log('Please open http://' + ip + ':' + port + '/');
 
