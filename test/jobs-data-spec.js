@@ -11,9 +11,6 @@ function resetJobs() {
 };
 
 
-var connectDB = Promise.promisify(mongoose.connect, mongoose);
-
-
 describe("get jobs", function() {
 
     var jobs;
@@ -21,7 +18,7 @@ describe("get jobs", function() {
     before(function(done) {
 //        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
-        connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
+        jobsData.connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
             .then(resetJobs)
             .then(jobModel.seedJobs)
             .then(jobsData.findJobs)
