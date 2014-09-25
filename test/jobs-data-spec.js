@@ -14,11 +14,12 @@ function resetJobs() {
 describe("get jobs", function() {
 
     var jobs;
+    var db_url = 'mongodb://localhost/jobfinder';
+    db_url = 'mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder';
 
     before(function(done) {
-//        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
-        jobsData.connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
+        jobsData.connectDB(db_url)
             .then(resetJobs)
             .then(jobModel.seedJobs)
             .then(jobsData.findJobs)
