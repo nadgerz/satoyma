@@ -6,6 +6,13 @@ var jobSchema = mongoose.Schema({
     description: {type:String}
 });
 
+var jobs = [
+        {title: 'Tom Corbin', description: 'Hanging out in Texas'},
+        {title: 'Steve Ingram', description: 'Hanging out in Berlin'},
+        {title: 'Kerstin Dengl', description: 'Hanging out in Augsburg'},
+        {title: 'Ken Southerland', description: 'Hanging out in Cloud Cuckoo Land'},
+    ];
+
 var Job = mongoose.model('Job', jobSchema);
 
 function findJobs(query) {
@@ -15,10 +22,6 @@ function findJobs(query) {
 exports.seedJobs = function() {
     findJobs({}).then(function(collection) {
         if (collection.length === 0) {
-            Job.create({title: 'Tom Corbin', description: 'Hanging out in Texas'});
-            Job.create({title: 'Steve Ingram', description: 'Hanging out in Berlin'});
-            Job.create({title: 'Kerstin Dengl', description: 'Hanging out in Augsburg'});
-            Job.create({title: 'Ken Southerland', description: 'Hanging out in Cloud Cuckoo Land'});
         }
     });
 };
