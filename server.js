@@ -1,4 +1,5 @@
 var express = require('express');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -13,6 +14,8 @@ app.get('*', function(req, res) {
 
 var port = process.env.PORT || 3000;
 var ip   = process.env.IP   || "localhost";
+
+mongoose.connect('mongodb://localhost/jobfinder');
 
 app.listen(port, ip);
 
