@@ -12,6 +12,11 @@ function resetJobs() {
 
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
+function findJobs(query) {
+    return Promise.cast(mongoose.model('Job').find({}).exec());
+}
+
+
 describe("get jobs", function() {
     it("should never be empty since jobs are seeded", function(done) {
         this.timeout(5000);
