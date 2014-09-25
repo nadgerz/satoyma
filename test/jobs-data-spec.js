@@ -6,7 +6,7 @@ var Promise = require('bluebird');
 function resetJobs() {
     return new Promise( function(resolve, reject) {
         mongoose.connection.collections['jobs'].drop(resolve, reject);
-    }
+    });
 };
 
 describe("get jobs", function() {
