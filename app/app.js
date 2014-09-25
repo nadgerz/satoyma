@@ -1,6 +1,12 @@
 angular.module('app', []);
 
 angular.module('app').controller('testCtrl', function($scope) {
-    $scope.test = "working!";
+    $scope.jobs = [{
+        title: 'Sales Person',
+        description: "Amoeba"
+    }, {
+        title: 'Floor Sweeper',
+        description: "Promoted from Sales Person!"
+    }];
 });
 
