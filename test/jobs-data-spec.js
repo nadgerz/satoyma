@@ -26,5 +26,10 @@ describe("get jobs", function() {
                 done();
             });
     });
+
+    it("should have a job with a title", function(done) {
+        expect();
+        done();
+    });
 });
 
