@@ -1,3 +1,5 @@
+var expect = require("chai").expect;
+
 describe("get jobs", function() {
     jobsList = [];
     it("should never be empty since jobs are seeded", function() {
