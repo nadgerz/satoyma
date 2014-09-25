@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 describe('Connect to database', function(){
     describe('connect', function(){
         it('should connect', function(done){
-            mongoose.connect('mongodb://localhost/test');
+//            mongoose.connect('mongodb://localhost/test');
             done();
         })
     })

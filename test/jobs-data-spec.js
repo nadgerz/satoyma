@@ -11,7 +11,9 @@ function resetJobs() {
 
 describe("get jobs", function() {
     it("should never be empty since jobs are seeded", function(done) {
+        this.timeout(5000);
         mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder', function() {
+//        mongoose.connect('mongodb://localhost/jobfinder', function() {
             resetJobs().then(function() {
                 jobModel.seedJobs(function() {
                     mongoose.model('Job').find({}).exec(function(error, jobsList) {
