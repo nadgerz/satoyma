@@ -17,6 +17,12 @@ var ip   = process.env.IP   || "localhost";
 
 mongoose.connect('mongodb://localhost/jobfinder');
 
+var conn = mongoose.connection;
+
+conn.once('open', function() {
+    console.log('connected to mongodb successfully');
+});
+
 app.listen(port, ip);
 
 console.log('Please open http://' + ip + ':' + port + '/');
