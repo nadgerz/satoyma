@@ -15,6 +15,8 @@ var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
 describe("get jobs", function() {
 
+    var jobsList;
+
     before(function(done) {
 //        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
