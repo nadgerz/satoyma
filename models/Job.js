@@ -8,6 +8,10 @@ var jobSchema = mongoose.Schema({
 
 var Job = mongoose.model('Job', jobSchema);
 
+function findJobs(query) {
+    return Promise.cast(mongoose.model('Job').find(query).exec());
+}
+
 exports.seedJobs = function() {
     return new Promise( function(resolve, reject) {
         Job.find({}).exec(function(error, collection) {
