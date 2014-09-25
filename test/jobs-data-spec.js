@@ -1,5 +1,6 @@
 var expect = require("chai").expect;
 var mongoose = require('mongoose');
+var jobModel = require('../models/Job');
 
 mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder');
 
