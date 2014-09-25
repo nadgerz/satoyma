@@ -14,6 +14,12 @@ var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
 
 describe("get jobs", function() {
+
+    before(function(done) {
+        console.log("BOOYAH");
+        done();
+    });
+
     it("should never be empty since jobs are seeded", function(done) {
 //        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
