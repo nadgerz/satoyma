@@ -13,7 +13,7 @@ function resetJobs() {
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
 function findJobs(query) {
-    return Promise.cast(mongoose.model('Job').find({}).exec());
+    return Promise.cast(mongoose.model('Job').find(query).exec());
 }
 
 
