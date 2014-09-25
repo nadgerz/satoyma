@@ -13,14 +13,12 @@ function findJobs(query) {
 }
 
 exports.seedJobs = function() {
-    return new Promise( function(resolve, reject) {
-        Job.find({}).exec(function(error, collection) {
-            if (collection.length === 0) {
-                Job.create({title: 'Tom Corbin', description: 'Hanging out in Texas'});
-                Job.create({title: 'Steve Ingram', description: 'Hanging out in Berlin'});
-                Job.create({title: 'Kerstin Dengl', description: 'Hanging out in Augsburg'});
-                Job.create({title: 'Ken Southerland', description: 'Hanging out in Cloud Cuckoo Land'}, resolve);
-            }
-        });
+    findJobs({}).then(function(collection) {
+        if (collection.length === 0) {
+            Job.create({title: 'Tom Corbin', description: 'Hanging out in Texas'});
+            Job.create({title: 'Steve Ingram', description: 'Hanging out in Berlin'});
+            Job.create({title: 'Kerstin Dengl', description: 'Hanging out in Augsburg'});
+            Job.create({title: 'Ken Southerland', description: 'Hanging out in Cloud Cuckoo Land'});
+        }
     });
 };

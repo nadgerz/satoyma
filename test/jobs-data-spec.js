@@ -20,7 +20,7 @@ describe("get jobs", function() {
         connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
             .then(resetJobs)
             .then(jobModel.seedJobs)
-            .then(findJobs)
+            .then(jobModel.findJobs)
             .then(function(jobsList) {
                 expect(jobsList.length).to.be.at.least(1);
                 done();
