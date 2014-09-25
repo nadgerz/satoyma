@@ -9,11 +9,14 @@ function resetJobs() {
     });
 };
 
+
+var connectDB = Promise.promisify(mongoose.connect, mongoose);
+
 describe("get jobs", function() {
     it("should never be empty since jobs are seeded", function(done) {
         this.timeout(5000);
-        mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder', function() {
-//        mongoose.connect('mongodb://localhost/jobfinder', function() {
+        connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder').then( function() {
+//        connectDB('mongodb://localhost/jobfinder').then( function() {
             resetJobs()
             .then(jobModel.seedJobs)
             .then(function() {
