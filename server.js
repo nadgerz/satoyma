@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var jobModel = require('./models/Job');
 
 var app = express();
 
@@ -9,7 +10,9 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname));
 
 app.get('/api/jobs', function(req, res) {
-    res.send('test');
+    mongoose.model('Job').find({}).exec(function(error, collection) {
+        res.send(collection);
+    })
 });
 
 app.get('*', function(req, res) {
@@ -25,6 +28,7 @@ var conn = mongoose.connection;
 
 conn.once('open', function() {
     console.log('connected to mongodb successfully');
+    jobModel.seedJobs();
 });
 
 app.listen(port, ip);
