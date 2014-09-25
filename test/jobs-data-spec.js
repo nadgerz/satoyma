@@ -37,5 +37,9 @@ describe("get jobs", function() {
     it("should have a job with a title", function() {
         expect(jobs[0].title).to.not.be.empty;
     });
+
+    it("should have a job with a description", function() {
+        expect(jobs[0].description).to.not.be.empty;
+    });
 });
 
