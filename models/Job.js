@@ -22,7 +22,7 @@ function findJobs(query) {
 var createJob = Promise.promisify(Job.create, Job);
 
 exports.seedJobs = function() {
-    retrun findJobs({}).then(function(collection) {
+    return findJobs({}).then(function(collection) {
         if (collection.length === 0) {
             return Promise.map(jobs, function(job) {
                 return createJob(job);
