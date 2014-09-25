@@ -11,8 +11,6 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname));
 
 app.get('/api/jobs', function(req, res) {
-    //console.log(req);
-    //console.log(res);
     jobsData.findJobs().then(function(collection) {
         res.send(collection);
     });
