@@ -20,8 +20,10 @@ var createJob = Promise.promisify(Job.create, Job);
 
 exports.seedJobs = function() {
     return jobsData.findJobs({}).then(function(collection) {
+//        console.log(collection);
         if (collection.length === 0) {
             return Promise.map(jobs, function(job) {
+//                console.log(job);
                 return createJob(job);
             });
         }

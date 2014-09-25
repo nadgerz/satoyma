@@ -11,7 +11,9 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname));
 
 app.get('/api/jobs', function(req, res) {
-    jobsData.findJobs().then(function(error, collection) {
+    //console.log(req);
+    //console.log(res);
+    jobsData.findJobs().then(function(collection) {
         res.send(collection);
     });
 });
@@ -23,13 +25,15 @@ app.get('*', function(req, res) {
 var port = process.env.PORT || 3000;
 var ip   = process.env.IP   || "localhost";
 
-//mongoose.connect('mongodb://localhost/jobfinder');
-jobsData.connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
+var db_url;
+db_url = 'mongodb://localhost/jobfinder';
+db_url = 'mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder';
+
+jobsData.connectDB(db_url)
 .then(function() {
-    console.log('connected to mongodb successfully');
+    console.log('connected to mongodb [' + db_url + '] successfully');
     jobModel.seedJobs();
 });
-
 
 app.listen(port, ip);
 
