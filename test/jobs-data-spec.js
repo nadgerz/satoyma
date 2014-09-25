@@ -15,7 +15,7 @@ describe("get jobs", function() {
         mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder', function() {
 //        mongoose.connect('mongodb://localhost/jobfinder', function() {
             resetJobs().then(function() {
-                jobModel.seedJobs(function() {
+                jobModel.seedJobs().then(function() {
                     mongoose.model('Job').find({}).exec(function(error, jobsList) {
                         expect(jobsList.length).to.be.at.least(1);
                         done();
