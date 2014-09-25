@@ -8,6 +8,10 @@ app.set('view engine', 'jade');
 
 app.use(express.static(__dirname));
 
+app.get('/api/jobs', function(req, res) {
+    res.send('test');
+});
+
 app.get('*', function(req, res) {
     res.render('index');
 });
