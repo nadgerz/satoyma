@@ -16,11 +16,6 @@ var connectDB = Promise.promisify(mongoose.connect, mongoose);
 describe("get jobs", function() {
 
     before(function(done) {
-        console.log("BOOYAH");
-        done();
-    });
-
-    it("should never be empty since jobs are seeded", function(done) {
 //        connectDB('mongodb://localhost/jobfinder')
         this.timeout(5000);
         connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
@@ -28,9 +23,12 @@ describe("get jobs", function() {
             .then(jobModel.seedJobs)
             .then(jobModel.findJobs)
             .then(function(jobsList) {
-                expect(jobsList.length).to.be.at.least(1);
                 done();
             });
+    });
+
+    it("should never be empty since jobs are seeded", function(done) {
+        expect(jobsList.length).to.be.at.least(1);
     });
 
     it("should have a job with a title", function(done) {
