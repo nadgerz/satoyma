@@ -40,7 +40,8 @@
     "underscore.string": "~2.3.3",
     "handlebars": "~2.0.0",
     "backbone.stickit": "~0.8.0",
-    "intl": "~0.1.4"
+    "intl": "~0.1.4",
+    "angular": "~1.2.25"
   },
   "devDependencies": {
     "backbone-fixtures": "*"
