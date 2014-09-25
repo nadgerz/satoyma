@@ -24,15 +24,12 @@ var port = process.env.PORT || 3000;
 var ip   = process.env.IP   || "localhost";
 
 //mongoose.connect('mongodb://localhost/jobfinder');
-mongoose.connect('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder');
-
-
-var conn = mongoose.connection;
-
-conn.once('open', function() {
+jobsData.connectDB('mongodb://dms:nrg@ds039850.mongolab.com:39850/jobfinder')
+.then(function() {
     console.log('connected to mongodb successfully');
     jobModel.seedJobs();
 });
+
 
 app.listen(port, ip);
 
