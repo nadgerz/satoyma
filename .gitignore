@@ -18,6 +18,11 @@ workspace.xml
 
 
 #
+#    TODO - not sure
+#
+!.gitkeep
+
+#
 #
 #
 .vagrant
@@ -34,6 +39,7 @@ npm-debug.log
 #
 # Logs
 logs
+logs/*
 *.log
 
 # Runtime data
