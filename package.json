@@ -54,7 +54,7 @@
     "jade": "^1.7.0",
     "leaflet": "^0.7.3",
     "matchdep": "^0.3.0",
-    "moment": "^2.8.3",
+    "moment": "^2.8.4",
     "mongodb": "^1.4.20",
     "morgan": "^1.5.0",
     "numeral": "^1.5.3",
